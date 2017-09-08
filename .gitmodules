@@ -1,0 +1,6 @@
+[submodule "share/git/STL"]
+	path = share/git/STL
+	url = https://github.com/StatisKit/STL
+[submodule "share/git/ClangLite"]
+	path = share/git/ClangLite
+	url = https://github.com/StatisKit/ClangLite
