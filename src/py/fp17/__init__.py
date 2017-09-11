@@ -36,8 +36,7 @@ def report(asg):
             fields['wrapped'] += isinstance(node.boost_python_export, str)
     if fields['source'] > 0:
         print('Fields:', fields['source'], '(' + str(round(fields['wrapped'] / float(fields['source']) * 100, 2)) + '%)')
-    if enumerations['source'] > 0:
-        functions = dict(source = 0, wrapped = 0)
+    functions = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
         if isinstance(node, FunctionProxy) and not isinstance(node, MethodProxy):
             functions['source'] += 1
