@@ -10,9 +10,10 @@ from autowig.asg import (EnumerationProxy,
 def report(asg):
     headers = dict(files = 0, SLOC = 0)
     for header in asg.files(header = True):
-        headers["files"] += 1
-        with open(header.globalname, 'r') as filehandler:
-            headers["SLOC"] += sum(1 for line in filehandler)
+        if header.on_disk:
+            headers["files"] += 1
+            with open(header.globalname, 'r') as filehandler:
+                headers["SLOC"] += sum(1 for line in filehandler)
     print('Headers:', headers['files'], '(' + headers['SLOC'] + ')')
     enumerations = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
