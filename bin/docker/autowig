@@ -1,6 +1,6 @@
 FROM statiskit/ubuntu
 
-RUN conda install python-autowig python-clanglite python-scons python-dev libdev -c statiskit -c conda-forge
+RUN conda install python-autowig python-clanglite python-scons python-dev libdev python-fp17 -c statiskit -c conda-forge
 RUN git clone --recursive https://github.com/StatisKit/FP17.git
 
 RUN echo "echo \"##############################################################################\"" >> $HOME/.bashrc
