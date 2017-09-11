@@ -54,7 +54,7 @@ def report(asg):
     for node in asg.nodes():
         if isinstance(node, ClassProxy):
             classes['source'] += 1
-            classes['wrapped'] += isinstance(node.boost_python_export, str))
+            classes['wrapped'] += int(isinstance(node.boost_python_export, str))
     if classes['source'] > 0:
         print('Classes:', classes['source'], '(' + str(round(classes['wrapped'] / float(classes['source']) * 100, 2)) + '%)')
     specializations = dict(source = 0, wrapped = 0)
