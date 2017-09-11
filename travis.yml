@@ -11,6 +11,10 @@ services:
   
 env:
   - PYTHON_VERSION=2
+    CONDA_RECIPE=python-fp17
+  - PYTHON_VERSION=3
+    CONDA_RECIPE=python-fp17
+  - PYTHON_VERSION=2
     CONDA_ENVIRONMENT=FP17
     JUPYTER_NOTEBOOK=basic.ipynb
   - PYTHON_VERSION=2

@@ -1,21 +1,36 @@
 # # -*-python-*-
 
+AddOption('--package',
+          dest = 'package',
+          type = 'string',
+          action = 'store',
+          help = 'Package to use for Conda build and install',
+          default = ['basic', 'fp17'])
+
 Import("env")
 pyenv = env.Clone(tools = ['boost_python'])
 
-pyenv.AppendUnique(LIBS  = ['basic'])
+pyenv['PACKAGE'] = GetOption('package')
 
-exclude = """
-""".split()
 
-sources = [source for source in pyenv.Glob('*.*') if source.name not in exclude]
+if pyenv['PACKAGE'] == 'basic': 
+    pyenv.AppendUnique(LIBS  = ['basic'])
 
-targets = pyenv.BoostPythonExtension("basic/__basic", sources)
-Alias("py", targets)
-Alias("install", targets)
-pyenv.Depends(targets, "cpp")
+    exclude = """
+    """.split()
 
-targets = pyenv.PythonPackage(basic = "basic")
-Alias("py", targets)
-Alias("install", targets)
-pyenv.Depends(targets, "cpp")
+    sources = [source for source in pyenv.Glob('*.*') if source.name not in exclude]
+
+    targets = pyenv.BoostPythonExtension("basic/__basic", sources)
+    Alias("py", targets)
+    Alias("install", targets)
+    pyenv.Depends(targets, "cpp")
+
+    targets = pyenv.PythonPackage(basic = "basic")
+    Alias("py", targets)
+    Alias("install", targets)
+    pyenv.Depends(targets, "cpp")
+else:
+    targets = pyenv.PythonPackage(fp17 = "fp17")
+    Alias("py", targets)
+    Alias("install", targets)

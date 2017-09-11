@@ -23,9 +23,9 @@ source:
   
 build:
     number: 0
-        - mkdir {{ SP_DIR }}\fp17          [unix]
-
-        - scons py --prefix={{ LIBRARY_PREFIX }} -j{{ CPU_COUNT }} --arch=%ARCH% [win]
+    script: 
+        - scons py --prefix={{ PREFIX }} -j{{ CPU_COUNT }} --package=fp17                        [unix]
+        - scons py --prefix={{ LIBRARY_PREFIX }} -j{{ CPU_COUNT }} --arch=%ARCH% --package=basic [win]
                 
 about:
     home: http://autowig.readthedocs.io/
@@ -37,3 +37,8 @@ requirements:
         - python
     run:
         - python
+        - python-autowig
+
+test:
+  commands:
+    - python -c "from fp17 import report"
