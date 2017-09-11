@@ -1,0 +1,15 @@
+name: FP17
+channels:
+  - statiskit
+  - conda-forge
+dependencies:
+  - jupyter
+  - python-autowig
+  - python
+  - libdev
+  - python-dev
+  - clang
+  - python-clanglite
+  - git
+  - gitpython
+  - libboost
