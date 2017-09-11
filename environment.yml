@@ -13,4 +13,4 @@ dependencies:
   - git
   - gitpython
   - libboost
-  - fp17
+  - python-fp17
