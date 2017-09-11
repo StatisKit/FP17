@@ -20,40 +20,48 @@ def report(asg):
         if isinstance(node, EnumerationProxy):
             enumerations['source'] += 1
             enumerations['wrapped'] += isinstance(node.boost_python_export, str)
-    print('Enumerations:', enumerations['source'], '(' + str(round(enumerations['wrapped'] / float(enumerations['source']) * 100, 2)) + '%)')
+    if enumerations['source'] > 0:
+        print('Enumerations:', enumerations['source'], '(' + str(round(enumerations['wrapped'] / float(enumerations['source']) * 100, 2)) + '%)')
     variables = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
         if isinstance(node, VariableProxy) and not isinstance(node, FieldProxy):
             variables['source'] += 1
             variables['wrapped'] += isinstance(node.boost_python_export, str)
-    print('Variables:', variables['source'], '(' + str(round(variables['wrapped'] / float(variables['source']) * 100, 2)) + '%)')
+    if variables['source'] > 0:
+        print('Variables:', variables['source'], '(' + str(round(variables['wrapped'] / float(variables['source']) * 100, 2)) + '%)')
     fields = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
         if isinstance(node, FieldProxy):
             fields['source'] += 1
             fields['wrapped'] += isinstance(node.boost_python_export, str)
-    print('Fields:', fields['source'], '(' + str(round(fields['wrapped'] / float(fields['source']) * 100, 2)) + '%)')
-    functions = dict(source = 0, wrapped = 0)
+    if fields['source'] > 0:
+        print('Fields:', fields['source'], '(' + str(round(fields['wrapped'] / float(fields['source']) * 100, 2)) + '%)')
+    if enumerations['source'] > 0:
+        functions = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
         if isinstance(node, FunctionProxy) and not isinstance(node, MethodProxy):
             functions['source'] += 1
             functions['wrapped'] += isinstance(node.boost_python_export, str)
-    print('Functions:', functions['source'], '(' + str(round(functions['wrapped'] / float(functions['source']) * 100, 2)) + '%)')
+    if functions['source'] > 0:
+        print('Functions:', functions['source'], '(' + str(round(functions['wrapped'] / float(functions['source']) * 100, 2)) + '%)')
     methods = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
         if isinstance(node, MethodProxy):
             methods['source'] += 1
             methods['wrapped'] += isinstance(node.boost_python_export, str)
-    print('Methods:', methods['source'], '(' + str(round(methods['wrapped'] / float(methods['source']) * 100, 2)) + '%)')
+    if enumerations['source'] > 0:
+        print('Methods:', methods['source'], '(' + str(round(methods['wrapped'] / float(methods['source']) * 100, 2)) + '%)')
     classes = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
         if isinstance(node, ClassProxy):
             classes['source'] += 1
             classes['wrapped'] += isinstance(node.boost_python_export, str)
-    print('Classes:', classes['source'], '(' + str(round(classes['wrapped'] / float(classes['source']) * 100, 2)) + '%)')
+    if classes['source'] > 0:
+        print('Classes:', classes['source'], '(' + str(round(classes['wrapped'] / float(classes['source']) * 100, 2)) + '%)')
     specializations = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
         if isinstance(node, EnumerationProxy):
             specializations['source'] += 1
             specializations['wrapped'] += isinstance(node.boost_python_export, str)
-    print('Specializations:', specializations['source'], '(' + str(round(specializations['wrapped'] / float(specializations['source']) * 100, 2)) + '%)')
+    if specializations['source'] > 0:
+        print('Specializations:', specializations['source'], '(' + str(round(specializations['wrapped'] / float(specializations['source']) * 100, 2)) + '%)')
