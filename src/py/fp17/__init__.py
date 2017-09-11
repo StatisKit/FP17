@@ -33,7 +33,7 @@ def report(asg):
     for node in asg.nodes():
         if isinstance(node, FieldProxy):
             fields['source'] += 1
-            fields['wrapped'] += int(node.boost_python_export and node.parent.boost_python_export not isinstance(node.parent.boost_python_export, bool))
+            fields['wrapped'] += int(node.boost_python_export and node.parent.boost_python_export and not isinstance(node.parent.boost_python_export, bool))
     if fields['source'] > 0:
         print('Fields: ' + str(fields['source']) + ' (' + str(round(fields['wrapped'] / float(fields['source']) * 100, 2)) + '%)')
     functions = dict(source = 0, wrapped = 0)
@@ -47,7 +47,7 @@ def report(asg):
     for node in asg.nodes():
         if isinstance(node, MethodProxy):
             methods['source'] += 1
-            methods['wrapped'] += int(node.boost_python_export and node.parent.boost_python_export not isinstance(node.parent.boost_python_export, bool))
+            methods['wrapped'] += int(node.boost_python_export and node.parent.boost_python_export and not isinstance(node.parent.boost_python_export, bool))
     if methods['source'] > 0:
         print('Methods: ' + str(methods['source']) + ' (' + str(round(methods['wrapped'] / float(methods['source']) * 100, 2)) + '%)')
     classes = dict(source = 0, wrapped = 0)
