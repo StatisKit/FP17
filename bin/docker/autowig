@@ -1,7 +1,13 @@
-FROM statiskit/ubuntu
+ARG CONDA_VERSION=2
+ARG GITHUB_USER=statiskit
+ARG GITHUB_REPO=fp17
+FROM statiskit/ubuntu:$CONDA_VERSION
+ARG CONDA_VERSION
+ARG GITHUB_USER
+ARG GITHUB_REPO
 
-RUN conda install python-autowig python-clanglite python-scons python-dev libdev python-fp17 -c statiskit -c conda-forge
-RUN git clone --recursive https://github.com/StatisKit/FP17.git
+RUN git clone --recursive https://github.com/$GITHUB_USER/$GITHUB_REPO.git repository
+RUN conda env update -n root -f repository/environment.yml
 
 RUN echo "echo \"##############################################################################\"" >> $HOME/.bashrc
 RUN echo "echo \"#                                                                            #\"" >> $HOME/.bashrc
@@ -9,7 +15,7 @@ RUN echo "echo \"# Welcome to the Docker container that enables you to run examp
 RUN echo "echo \"# in the AutoWIG paper. After launching this container using the following   #\"" >> $HOME/.bashrc
 RUN echo "echo \"# commmand line,                                                             #\"" >> $HOME/.bashrc
 RUN echo "echo \"#                                                                            #\"" >> $HOME/.bashrc
-RUN echo "echo \"#    docker run -i -t -p 8888:8888 statiskit/fp17                            #\"" >> $HOME/.bashrc
+RUN echo "echo \"#    docker run -i -t -p 8888:8888 "$GITHUB_USER"/"$GITHUB_REPO":"$CONDA_VERSION"                          #\"" >> $HOME/.bashrc
 RUN echo "echo \"#                                                                            #\"" >> $HOME/.bashrc
 RUN echo "echo \"# you can run examples as follows,                                           #\"" >> $HOME/.bashrc
 RUN echo "echo \"#                                                                            #\"" >> $HOME/.bashrc
@@ -26,4 +32,4 @@ RUN echo "echo \"###############################################################
 
 RUN echo "source activate root" >> $HOME/.bashrc
 
-WORKDIR /home/main/FP17/share/jupyter
+WORKDIR /home/main/repository/share/jupyter

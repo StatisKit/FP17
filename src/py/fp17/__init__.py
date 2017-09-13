@@ -1,3 +1,4 @@
+import six
 from autowig.asg import (EnumerationProxy,
                          VariableProxy,
                          FieldProxy,
@@ -12,54 +13,58 @@ def report(asg):
     for header in asg.files(header = True):
         if header.on_disk:
             headers["files"] += 1
-            with open(header.globalname, 'r') as filehandler:
-                headers["SLOC"] += sum(1 for line in filehandler)
+            if six.PY2:
+                with open(header.globalname, 'r') as filehandler:
+                    headers["SLOC"] += sum(1 for line in filehandler)
+            else:
+                with open(header.globalname, 'r', errors='ignore') as filehandler:
+                    headers["SLOC"] += sum(1 for line in filehandler)
     print('Headers: ' + str(headers['files']) + ' (' + str(headers['SLOC']) + ' SLOC)')
     enumerations = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
-        if isinstance(node, EnumerationProxy):
+        if isinstance(node, EnumerationProxy) and not node.access in ['protected', 'private']:
             enumerations['source'] += 1
             enumerations['wrapped'] += int(node.boost_python_export and not isinstance(node.boost_python_export, bool))
     if enumerations['source'] > 0:
         print('Enumerations: ' + str(enumerations['source']) + ' (' + str(round(enumerations['wrapped'] / float(enumerations['source']) * 100, 2)) + '%)')
     variables = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
-        if isinstance(node, VariableProxy) and not isinstance(node, FieldProxy):
+        if isinstance(node, VariableProxy) and not node.access in ['protected', 'private'] and not isinstance(node, FieldProxy):
             variables['source'] += 1
             variables['wrapped'] += int(node.boost_python_export and not isinstance(node.boost_python_export, bool))
     if variables['source'] > 0:
         print('Variables: ' + str(variables['source']) + ' (' + str(round(variables['wrapped'] / float(variables['source']) * 100, 2)) + '%)')
     fields = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
-        if isinstance(node, FieldProxy):
+        if isinstance(node, FieldProxy) and not node.access in ['protected', 'private']:
             fields['source'] += 1
             fields['wrapped'] += int(node.boost_python_export and node.parent.boost_python_export and not isinstance(node.parent.boost_python_export, bool))
     if fields['source'] > 0:
         print('Fields: ' + str(fields['source']) + ' (' + str(round(fields['wrapped'] / float(fields['source']) * 100, 2)) + '%)')
     functions = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
-        if isinstance(node, FunctionProxy) and not isinstance(node, MethodProxy):
+        if isinstance(node, FunctionProxy) and not node.access in ['protected', 'private'] and not isinstance(node, MethodProxy):
             functions['source'] += 1
             functions['wrapped'] += int(node.boost_python_export and not isinstance(node.boost_python_export, bool))
     if functions['source'] > 0:
         print('Functions: ' + str(functions['source']) + ' (' + str(round(functions['wrapped'] / float(functions['source']) * 100, 2)) + '%)')
     methods = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
-        if isinstance(node, MethodProxy):
+        if isinstance(node, MethodProxy) and not node.access in ['protected', 'private']:
             methods['source'] += 1
             methods['wrapped'] += int(node.boost_python_export and node.parent.boost_python_export and not isinstance(node.parent.boost_python_export, bool))
     if methods['source'] > 0:
         print('Methods: ' + str(methods['source']) + ' (' + str(round(methods['wrapped'] / float(methods['source']) * 100, 2)) + '%)')
     classes = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
-        if isinstance(node, ClassProxy):
+        if isinstance(node, ClassProxy) and not node.access in ['protected', 'private']:
             classes['source'] += 1
             classes['wrapped'] += int(node.boost_python_export and not isinstance(node.boost_python_export, bool))
     if classes['source'] > 0:
         print('Classes: ' + str(classes['source']) + ' (' + str(round(classes['wrapped'] / float(classes['source']) * 100, 2)) + '%)')
     specializations = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
-        if isinstance(node, EnumerationProxy):
+        if isinstance(node, ClassTemplateSpecializationProxy) and not node.access in ['protected', 'private']:
             specializations['source'] += 1
             specializations['wrapped'] += int(node.boost_python_export and not isinstance(node.boost_python_export, bool))
     if specializations['source'] > 0:
