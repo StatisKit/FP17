@@ -24,8 +24,8 @@ source:
 build:
     number: 0
     script: 
-        - scons py --prefix={{ PREFIX }} -j{{ CPU_COUNT }} --package=basic                       [unix]
-        - scons py --prefix={{ LIBRARY_PREFIX }} -j{{ CPU_COUNT }} --arch=%ARCH% --package=basic [win]
+        - scons py --prefix={{ PREFIX }} -j{{ CPU_COUNT }} --package=basic                       [unix]
+        - scons py --prefix={{ LIBRARY_PREFIX }} -j{{ CPU_COUNT }} --arch=%ARCH% --package=basic [win]
                 
 about:
     home: http://autowig.readthedocs.io/
