@@ -1,3 +1,9 @@
+.. image:: https://travis-ci.org/StatisKit/FP17.svg?branch=master
+   :target: https://travis-ci.org/StatisKit/FP17
+  
+.. image:: https://ci.appveyor.com/api/projects/status/bwc7elajp21arif0/branch/master
+   :target: https://ci.appveyor.com/api/projects/status/bwc7elajp21arif0/branch/master
+
 Material for the paper entitled "**AutoWIG**: automatic generation of *Python* bindings for *C++* libraries" and submitted to PeerJ Computer Science
 ====================================================================================================================================================
 
@@ -34,18 +40,42 @@ Using **Docker** `images <https://docs.docker.com/>`_ and a **Binder** `server <
 Online with **Binder**
 ----------------------
 
-To reproduce the studies online, use this `server <https://beta.mybinder.org/v2/gh/statiskit/fpd17/master?filepath=share/jupyter/index.ipynb>`_.
+To reproduce the studies online, use this `server <https://beta.mybinder.org/v2/gh/statiskit/fp17/master?filepath=share/jupyter/index.ipynb>`_.
 
 On your computer with **Docker**
 --------------------------------
 
-To reproduce the studies with **Docker** use these `images <https://hub.docker.com/r/statiskit/fpd17/tags>`_.
-After `installing <https://docs.docker.com/engine/installation/>`_ **Docker**, you can type the following command in a shell:
+To reproduce the studies with **Docker** use these `images <https://hub.docker.com/r/statiskit/fp17/tags>`_.
+After `installing <https://docs.docker.com/engine/installation/>`_ **Docker**, you can type the following commands in a shell:
 
-.. code-block:: console
+* For the *Python 2* version 
 
-    docker run -i -t -p 8888:8888 statiskit/fpd17:latest
+  .. code-block:: console
+
+      docker run -i -t -p 8888:8888 statiskit/fp17:2
    
+* For the *Python 3* version 
+
+  .. code-block:: console
+
+      docker run -i -t -p 8888:8888 statiskit/fp17:3
+      
+.. warning::
+
+  The initial **Docker** containers used for the article can be run using thes commands in a shell:
+  
+  * For the *Python 2* version 
+
+    .. code-block:: console
+
+      docker run -i -t -p 8888:8888 statiskit/fp17:2.1
+   
+  * For the *Python 3* version 
+
+    .. code-block:: console
+
+      docker run -i -t -p 8888:8888 statiskit/fp17:3.1
+  
 Then, follow the given instructions.
 
 Install it !
