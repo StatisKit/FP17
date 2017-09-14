@@ -24,6 +24,9 @@ env:
   - CONDA_VERSION=2
     CONDA_ENVIRONMENT=FP17
     JUPYTER_NOTEBOOK=template.ipynb
+  - CONDA_VERSION=2
+    CONDA_ENVIRONMENT=FP17
+    JUPYTER_NOTEBOOK=dependent.ipynb
   - CONDA_VERSION=3
     CONDA_ENVIRONMENT=FP17
     JUPYTER_NOTEBOOK=basic.ipynb
@@ -34,13 +37,23 @@ env:
   - CONDA_VERSION=3
     CONDA_ENVIRONMENT=FP17
     JUPYTER_NOTEBOOK=template.ipynb
+  - CONDA_VERSION=3
+    CONDA_ENVIRONMENT=FP17
+    JUPYTER_NOTEBOOK=dependent.ipynb
   - DOCKERFILE=fp17
-
+    CONDA_VERSION=2
+  - DOCKERFILE=fp17
+    CONDA_VERSION=3  
+    
 matrix:
   exclude:
   - os: osx
     env: DOCKERFILE=fp17
-    
+         CONDA_VERSION=2
+  - os: osx
+    env: DOCKERFILE=fp17
+         CONDA_VERSION=3
+
 install:
   - git clone https://github.com/StatisKit/travis-ci.git travis-ci
   - cd travis-ci

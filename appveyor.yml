@@ -10,11 +10,29 @@ environment:
       CONDA_RECIPE: python-fp17
     - CONDA_ENVIRONMENT: FP17
       JUPYTER_NOTEBOOK: basic.ipynb
+      CONDA_VERSION: 2
     - CONDA_ENVIRONMENT: FP17
       JUPYTER_NOTEBOOK: subset.ipynb
+      CONDA_VERSION: 2
     - CONDA_ENVIRONMENT: FP17
       JUPYTER_NOTEBOOK: template.ipynb
-      
+      CONDA_VERSION: 2
+    - CONDA_ENVIRONMENT: FP17
+      JUPYTER_NOTEBOOK: dependent.ipynb
+      CONDA_VERSION: 2 
+    - CONDA_ENVIRONMENT: FP17
+      JUPYTER_NOTEBOOK: basic.ipynb
+      CONDA_VERSION: 3
+    - CONDA_ENVIRONMENT: FP17
+      JUPYTER_NOTEBOOK: subset.ipynb
+      CONDA_VERSION: 3
+    - CONDA_ENVIRONMENT: FP17
+      JUPYTER_NOTEBOOK: template.ipynb
+      CONDA_VERSION: 3
+    - CONDA_ENVIRONMENT: FP17
+      JUPYTER_NOTEBOOK: dependent.ipynb
+      CONDA_VERSION: 3    
+
 install:
   - git clone https://github.com/StatisKit/appveyor-ci.git appveyor-ci
   - cd appveyor-ci
