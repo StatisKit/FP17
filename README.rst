@@ -90,13 +90,13 @@ Then, to install the required packages, proceed as as follows:
 
    .. code:: console
    
-     git clone https://github.com/StatisKit/FPD17
+     git clone https://github.com/StatisKit/FP17
      
 2. Enter the cloned repository,
 
    .. code:: console
    
-     cd FPD17
+     cd FP17
      
 3. Install the given **Conda** environment,
 
