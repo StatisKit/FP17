@@ -1,2 +1,127 @@
+.. image:: https://travis-ci.org/StatisKit/FP17.svg?branch=master
+   :target: https://travis-ci.org/StatisKit/FP17
+  
+.. image:: https://ci.appveyor.com/api/projects/status/bwc7elajp21arif0/branch/master
+   :target: https://ci.appveyor.com/api/projects/status/bwc7elajp21arif0/branch/master
+
 Material for the paper entitled "**AutoWIG**: automatic generation of *Python* bindings for *C++* libraries" and submitted to PeerJ Computer Science
 ====================================================================================================================================================
+
+This repository contains supplementary material for the reproducibiliy of computational studies performed in the article "**AutoWIG**: automatic generation of *Python* bindings for *C++* libraries" written by:
+
+* Pierre Fernique,
+* Christophe Pradal.
+
+This article has been submitted to the "PeerJ Computer Science" journal.
+Here is the the citation formated as the bibtex standart.
+
+.. code-block:: bibtex
+
+  @article{FP17,
+    author    = {Pierre Fernique and Christophe Pradal},
+    title     = {{AutoWIG}: Automatic Generation of {Python} Bindings for {C++} Libraries},
+    journal   = {CoRR},
+    volume    = {abs/1705.11000},
+    year      = {2017},
+    url       = {http://arxiv.org/abs/1705.11000},
+    timestamp = {Wed, 07 Jun 2017 14:40:24 +0200},
+    biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/FerniqueP17},
+    bibsource = {dblp computer science bibliography, http://dblp.org}
+  }
+
+These studies are formatted as pre-executed **Jupyter** `notebooks <https://jupyter.readthedocs.io/en/latest/index.html>`_.
+Refers to the `index.ipynb <share/jupyter/index.ipynb>`_ notebook which presents and references each study.
+
+Test it !
+=========
+
+Using **Docker** `images <https://docs.docker.com/>`_ and a **Binder** `server <http://docs.mybinder.org/>`_, we are able to provide ways to reproduce the article studies without installing the **StatisKit** software suite.
+    
+Online with **Binder**
+----------------------
+
+To reproduce the studies online, use this `server <https://beta.mybinder.org/v2/gh/statiskit/fp17/master?filepath=share/jupyter/index.ipynb>`_.
+
+On your computer with **Docker**
+--------------------------------
+
+To reproduce the studies with **Docker** use these `images <https://hub.docker.com/r/statiskit/fp17/tags>`_.
+After `installing <https://docs.docker.com/engine/installation/>`_ **Docker**, you can type the following commands in a shell:
+
+* For the *Python 2* version 
+
+  .. code-block:: console
+
+      docker run -i -t -p 8888:8888 statiskit/fp17:2
+   
+* For the *Python 3* version 
+
+  .. code-block:: console
+
+      docker run -i -t -p 8888:8888 statiskit/fp17:3
+      
+.. warning::
+
+  The initial **Docker** containers used for the article can be run using thes commands in a shell:
+  
+  * For the *Python 2* version 
+
+    .. code-block:: console
+
+      docker run -i -t -p 8888:8888 statiskit/fp17:2.1
+   
+  * For the *Python 3* version 
+
+    .. code-block:: console
+
+      docker run -i -t -p 8888:8888 statiskit/fp17:3.1
+  
+Then, follow the given instructions.
+
+Install it !
+============
+
+You can also install required packages on your computer to reproduce these studies.
+In order to ease the installation of these packages on multiple operating systems, the **Conda** `package and environment management system <https://conda.io/docs/>`_ is used.
+For more information refers to the **StatisKit** software suite documentation concerning prerequisites to the `installation <http://statiskit.readthedocs.io/en/latest/user/install_it.html>`_ step.
+Then, to install the required packages, proceed as as follows:
+
+1. Clone this repository,
+
+   .. code:: console
+   
+     git clone https://github.com/StatisKit/FP17
+     
+2. Enter the cloned repository,
+
+   .. code:: console
+   
+     cd FP17
+     
+3. Install the given **Conda** environment,
+
+   .. code:: console
+
+     conda env create -f environment.yml
+  
+4. Activate the **Conda** environment as precised in your terminal.
+
+5. Enter the :code:`share` repository,
+
+   .. code:: console
+   
+     cd share
+     
+6. Enter the :code:`jupyter` repository,
+
+   .. code:: console
+   
+     cd jupyter
+     
+7. Launch the **Jupyter** the `index.ipynb <jupyter/index.ipynb>`_ notebook,
+
+   .. code:: console
+
+     jupyter notebook index.ipynb
+     
+7. Execute the `index.ipynb <share/jupyter/index.ipynb>`_ notebook to execute all examples or navigate among referenced notebooks to execute them separatly.
