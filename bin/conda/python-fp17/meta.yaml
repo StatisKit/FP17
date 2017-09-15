@@ -25,7 +25,7 @@ build:
     number: 0
     script: 
         - scons py --prefix={{ PREFIX }} -j{{ CPU_COUNT }} --package=fp17                        [unix]
-        - scons py --prefix={{ LIBRARY_PREFIX }} -j{{ CPU_COUNT }} --arch=%ARCH% --package=basic [win]
+        - scons py --prefix={{ LIBRARY_PREFIX }} -j{{ CPU_COUNT }} --arch=%ARCH% --package=fp17  [win]
                 
 about:
     home: http://autowig.readthedocs.io/
