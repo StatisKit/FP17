@@ -4,6 +4,3 @@
 [submodule "share/git/ClangLite"]
 	path = share/git/ClangLite
 	url = https://github.com/StatisKit/ClangLite
-[submodule "share/git/StructureAnalysis"]
-	path = share/git/StructureAnalysis
-	url = https://github.com/VirtualPlants/StructureAnalysis
