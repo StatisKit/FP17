@@ -55,13 +55,13 @@ After `installing <https://docs.docker.com/engine/installation/>`_ **Docker**, y
 
   .. code-block:: console
 
-      docker run -i -t -p 8888:8888 statiskit/fp17:latest-py27
+      docker run -i -t -p 8888:8888 statiskit/fp17:latest-py2k
    
 * For the *Python 3* version 
 
   .. code-block:: console
 
-      docker run -i -t -p 8888:8888 statiskit/fp17:latest-py36
+      docker run -i -t -p 8888:8888 statiskit/fp17:latest-py3k
       
 .. warning::
 
@@ -71,13 +71,13 @@ After `installing <https://docs.docker.com/engine/installation/>`_ **Docker**, y
 
     .. code-block:: console
 
-      docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py27
+      docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py2k
    
   * For the *Python 3* version 
 
     .. code-block:: console
 
-      docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py36
+      docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py3k
   
 Then, follow the given instructions.
 
