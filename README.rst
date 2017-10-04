@@ -65,7 +65,7 @@ After `installing <https://docs.docker.com/engine/installation/>`_ **Docker**, y
       
 .. warning::
 
-  The initial **Docker** containers used for the article can be run using thes commands in a shell:
+  The initial **Docker** containers used for the article can be run using these commands in a shell:
   
   * For the *Python 2* version 
 
