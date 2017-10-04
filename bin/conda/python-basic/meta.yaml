@@ -29,17 +29,17 @@ build:
                 
 about:
     home: http://autowig.readthedocs.io/
-    license: CeCILL
+    license: Apache License 2.0
 
 requirements:
     build:
-        - libdev
-        - python-dev
+        - libtoolchain
+        - python-toolchain
         - python
         - libboost
         - libbasic
     run:
-        - librun
+        - libruntime
         - python
         - libboost
         - libbasic
