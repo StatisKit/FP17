@@ -1,3 +1,6 @@
+.. image:: https://img.shields.io/badge/License-Apache%202.0-yellow.svg
+   :target: https://opensource.org/licenses/Apache-2.0
+   
 .. image:: https://travis-ci.org/StatisKit/FP17.svg?branch=master
    :target: https://travis-ci.org/StatisKit/FP17
   
@@ -104,7 +107,7 @@ Then, to install the required packages, proceed as as follows:
 
      conda env create -f environment.yml
   
-4. Activate the **Conda** environment as precised in your terminal.
+4. Activate the **Conda** environment as advised in your terminal.
 
 5. Enter the :code:`share` repository,
 
