@@ -1,7 +1,7 @@
 ARG CONDA_VERSION=2
 ARG GITHUB_USER=statiskit
 ARG GITHUB_REPO=fp17
-FROM statiskit/ubuntu:$CONDA_VERSION
+FROM "statiskit/ubuntu:latest-py"$CONDA_VERSION"k"
 ARG CONDA_VERSION
 ARG GITHUB_USER
 ARG GITHUB_REPO
@@ -15,7 +15,7 @@ RUN echo "echo \"# Welcome to the Docker container that enables you to run examp
 RUN echo "echo \"# in the AutoWIG paper. After launching this container using the following   #\"" >> $HOME/.bashrc
 RUN echo "echo \"# commmand line,                                                             #\"" >> $HOME/.bashrc
 RUN echo "echo \"#                                                                            #\"" >> $HOME/.bashrc
-RUN echo "echo \"#    docker run -i -t -p 8888:8888 "$GITHUB_USER"/"$GITHUB_REPO":"$CONDA_VERSION"                          #\"" >> $HOME/.bashrc
+RUN echo "echo \"#    docker run -i -t -p 8888:8888 "$GITHUB_USER"/"$GITHUB_REPO":latest-py"$CONDA_VERSION"k                          #\"" >> $HOME/.bashrc
 RUN echo "echo \"#                                                                            #\"" >> $HOME/.bashrc
 RUN echo "echo \"# you can run examples as follows,                                           #\"" >> $HOME/.bashrc
 RUN echo "echo \"#                                                                            #\"" >> $HOME/.bashrc
