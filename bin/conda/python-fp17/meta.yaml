@@ -29,11 +29,11 @@ build:
                 
 about:
     home: http://autowig.readthedocs.io/
-    license: CeCILL
+    license: Apache License 2.0
 
 requirements:
     build:
-        - python-dev
+        - python-toolchain
         - python
     run:
         - python
