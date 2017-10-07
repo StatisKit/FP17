@@ -38,7 +38,7 @@ Refers to the `index.ipynb <share/jupyter/index.ipynb>`_ notebook which presents
 Test it !
 =========
 
-Using **Docker** `images <https://docs.docker.com/>`_ and a **Binder** `server <http://docs.mybinder.org/>`_, we are able to provide ways to reproduce the article studies without installing the **StatisKit** software suite.
+Using  `**Docker** <https://docs.docker.com/>`_  and  `**Binder** <http://docs.mybinder.org/>`_ , we are able to provide ways to reproduce the article studies without installing the **StatisKit** software suite.
     
 Online with **Binder**
 ----------------------
@@ -50,20 +50,6 @@ On your computer with **Docker**
 
 To reproduce the studies with **Docker** use these `images <https://hub.docker.com/r/statiskit/fp17/tags>`_.
 After `installing <https://docs.docker.com/engine/installation/>`_ **Docker**, you can type the following commands in a shell:
-
-* For the *Python 2* version 
-
-  .. code-block:: console
-
-      docker run -i -t -p 8888:8888 statiskit/fp17:latest-py2k
-   
-* For the *Python 3* version 
-
-  .. code-block:: console
-
-      docker run -i -t -p 8888:8888 statiskit/fp17:latest-py3k
-      
-.. warning::
 
   The initial **Docker** containers used for the article can be run using these commands in a shell:
   
@@ -139,4 +125,4 @@ Then, to install the required packages, proceed as as follows:
 
      jupyter notebook index.ipynb
      
-7. Execute the `index.ipynb <share/jupyter/index.ipynb>`_ notebook to execute all examples or navigate among referenced notebooks to execute them separatly.
+8. Execute the `index.ipynb <share/jupyter/index.ipynb>`_ notebook to execute all examples or navigate among referenced notebooks to execute them separatly.
