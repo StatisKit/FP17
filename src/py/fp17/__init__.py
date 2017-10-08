@@ -29,32 +29,18 @@ def report(asg):
         print('Enumerations: ' + str(enumerations['source']) + ' (' + str(round(enumerations['wrapped'] / float(enumerations['source']) * 100, 2)) + '%)')
     variables = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
-        if isinstance(node, VariableProxy) and not node.access in ['protected', 'private'] and not isinstance(node, FieldProxy):
+        if isinstance(node, VariableProxy) and not node.access in ['protected', 'private']:
             variables['source'] += 1
             variables['wrapped'] += int(node.boost_python_export and not isinstance(node.boost_python_export, bool))
     if variables['source'] > 0:
         print('Variables: ' + str(variables['source']) + ' (' + str(round(variables['wrapped'] / float(variables['source']) * 100, 2)) + '%)')
-    fields = dict(source = 0, wrapped = 0)
-    for node in asg.nodes():
-        if isinstance(node, FieldProxy) and not node.access in ['protected', 'private']:
-            fields['source'] += 1
-            fields['wrapped'] += int(node.boost_python_export and node.parent.boost_python_export and not isinstance(node.parent.boost_python_export, bool))
-    if fields['source'] > 0:
-        print('Fields: ' + str(fields['source']) + ' (' + str(round(fields['wrapped'] / float(fields['source']) * 100, 2)) + '%)')
     functions = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
-        if isinstance(node, FunctionProxy) and not node.access in ['protected', 'private'] and not isinstance(node, MethodProxy):
+        if isinstance(node, FunctionProxy) and not node.access in ['protected', 'private']:
             functions['source'] += 1
             functions['wrapped'] += int(node.boost_python_export and not isinstance(node.boost_python_export, bool))
     if functions['source'] > 0:
         print('Functions: ' + str(functions['source']) + ' (' + str(round(functions['wrapped'] / float(functions['source']) * 100, 2)) + '%)')
-    methods = dict(source = 0, wrapped = 0)
-    for node in asg.nodes():
-        if isinstance(node, MethodProxy) and not node.access in ['protected', 'private']:
-            methods['source'] += 1
-            methods['wrapped'] += int(node.boost_python_export and node.parent.boost_python_export and not isinstance(node.parent.boost_python_export, bool))
-    if methods['source'] > 0:
-        print('Methods: ' + str(methods['source']) + ' (' + str(round(methods['wrapped'] / float(methods['source']) * 100, 2)) + '%)')
     classes = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
         if isinstance(node, ClassProxy) and not node.access in ['protected', 'private']:
