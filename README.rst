@@ -38,7 +38,7 @@ Refers to the `index.ipynb <share/jupyter/index.ipynb>`_ notebook which presents
 Test it !
 =========
 
-Using  `**Docker** <https://docs.docker.com/>`_  and  `**Binder** <http://docs.mybinder.org/>`_ , we are able to provide ways to reproduce the article studies without installing the **StatisKit** software suite.
+Using **Docker** `images <https://docs.docker.com/>`_  and **Binder**  `servers <http://docs.mybinder.org/>`_ , we are able to provide ways to reproduce the article studies without installing the **StatisKit** software suite.
     
 Online with **Binder**
 ----------------------
