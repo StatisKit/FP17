@@ -50,23 +50,38 @@ On your computer with **Docker**
 
 To reproduce the studies with **Docker** use these `images <https://hub.docker.com/r/statiskit/fp17/tags>`_.
 After `installing <https://docs.docker.com/engine/installation/>`_ **Docker**, you can type the following commands in a shell:
-
-  The initial **Docker** containers used for the article can be run using these commands in a shell:
   
-  * For the *Python 2* version 
+* For the *Python 2* version 
 
-    .. code-block:: console
+  .. code-block:: console
 
-      docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py2k
+    docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py2k
    
-  * For the *Python 3* version 
+* For the *Python 3* version 
 
-    .. code-block:: console
+  .. code-block:: console
 
-      docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py3k
+    docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py3k
   
 Then, follow the given instructions.
 
+.. note::
+
+    These images correspond to the one used for the article.
+    Most recent images can be run using these commands in a shell:
+
+    * For the *Python 2* version 
+
+      .. code-block:: console
+
+        docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py2k
+   
+    * For the *Python 3* version 
+
+      .. code-block:: console
+
+        docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py3k
+    
 Install it !
 ============
 
