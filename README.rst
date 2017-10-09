@@ -106,7 +106,7 @@ Then, to install the required packages, proceed as as follows:
 
    .. code:: console
 
-     conda create -f environment.yml
+     conda env create -f environment.yml
      
    .. warning::
 
@@ -116,7 +116,7 @@ Then, to install the required packages, proceed as as follows:
      
       conda install -n root conda-build-all
       conda build-all . --matrix-conditions 'python 2.7.x'
-      conda create --use-local -f environment.yml
+      conda env create --use-local -f environment.yml
       
      Replace :code:`'python 2.7.x'` by :code:`'python 3.6.x'` for building the *Python 3* binaries instead of the *Python 2*.
   
