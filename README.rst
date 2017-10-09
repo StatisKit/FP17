@@ -64,18 +64,6 @@ After `installing <https://docs.docker.com/engine/installation/>`_ **Docker**, y
     docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py3k
   
 Then, follow the given instructions.
-
-.. warning::
-
-  This examples compile *C++* linked against the **Boost.Python** library that is quite demanding concerning RAM.
-  Some compiler internal errors can therefore arise since **Conda** recipes use all CPUs.
-  To limit the number of CPUs used for the compilation, set the environment variable :code:`CPU_COUNT` to a number inferior to your number of CPUs.
-  For instance before execution notebooks the usage of the following command can resolve these errors
-  
-  .. code-block:: console
-  
-    export CPU_COUNT=1
-    
   
 .. note::
 
