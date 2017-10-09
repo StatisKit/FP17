@@ -65,6 +65,18 @@ After `installing <https://docs.docker.com/engine/installation/>`_ **Docker**, y
   
 Then, follow the given instructions.
 
+.. warning::
+
+  This examples compile *C++* linked against the **Boost.Python** library that is quite demanding concerning RAM.
+  Some compiler internal errors can therefore arise since **Conda** recipes use all CPUs.
+  To limit the number of CPUs used for the compilation, set the environment variable :code:`CPU_COUNT` to a number inferior to your number of CPUs.
+  For instance before execution notebooks the usage of the following command can resolve these errors
+  
+  .. code-block:: console
+  
+    export CPU_COUNT=1
+    
+  
 .. note::
 
     These images correspond to the one used for the article.
@@ -84,8 +96,17 @@ Then, follow the given instructions.
     
 Install it !
 ============
-
+  
 You can also install required packages on your computer to reproduce these studies.
+
+.. warning::
+
+  To use the examples without **Docker** you must install:
+  
+  * `Visual Studio Community 2013 <https://www.visualstudio.com/en-us/news/releasenotes/vs2013-community-vs>`_ for Windows OSes.
+  * **xcode=7.3** for OsX.
+  * **gcc=5** for Linus OSes.
+  
 In order to ease the installation of these packages on multiple operating systems, the **Conda** `package and environment management system <https://conda.io/docs/>`_ is used.
 For more information refers to the **StatisKit** software suite documentation concerning prerequisites to the `installation <http://statiskit.readthedocs.io/en/latest/user/install_it.html>`_ step.
 Then, to install the required packages, proceed as as follows:
