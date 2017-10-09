@@ -74,13 +74,13 @@ Then, follow the given instructions.
 
       .. code-block:: console
 
-        docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py2k
+        docker run -i -t -p 8888:8888 statiskit/fp17:latest-py2k
    
     * For the *Python 3* version 
 
       .. code-block:: console
 
-        docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py3k
+        docker run -i -t -p 8888:8888 statiskit/fp17:latest-py3k
     
 Install it !
 ============
