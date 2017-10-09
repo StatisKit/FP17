@@ -31,5 +31,6 @@ RUN echo "echo \"#                                                              
 RUN echo "echo \"##############################################################################\"" >> $HOME/.bashrc
 
 RUN echo "source activate root" >> $HOME/.bashrc
+RUN echo "export CPU_COUNT=1" >> $HOME/.bashrc
 
 WORKDIR /home/main/repository/share/jupyter
