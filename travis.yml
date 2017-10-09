@@ -54,6 +54,9 @@ matrix:
     env: DOCKERFILE=fp17
          CONDA_VERSION=3
 
+before_install:
+  - git submodule update --init --recursive
+
 install:
   - git clone https://github.com/StatisKit/travis-ci.git travis-ci
   - cd travis-ci
