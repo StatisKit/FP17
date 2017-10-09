@@ -1,9 +1,9 @@
-[submodule "share/git/STL"]
-	path = share/git/STL
-	url = https://github.com/StatisKit/STL
 [submodule "share/git/ClangLite"]
 	path = share/git/ClangLite
 	url = https://github.com/StatisKit/ClangLite
 [submodule "share/git/StructureAnalysis"]
 	path = share/git/StructureAnalysis
 	url = https://github.com/pfernique/StructureAnalysis
+[submodule "share/git/STL"]
+	path = share/git/STL
+	url = http://github.com/Statiskit/STL
