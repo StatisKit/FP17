@@ -26,7 +26,7 @@ def report(asg):
             enumerations['source'] += 1
             enumerations['wrapped'] +=int(node.boost_python_export and (not isinstance(node.boost_python_export, bool) or not isinstance(node.parent.boost_python_export, bool)))
     if enumerations['source'] > 0:
-        print('Enumerations: ' + str(enumerations['source']) + ' (' + enumerations['wrapped']) + ' wrapped)')
+        print('Enumerations: ' + str(enumerations['source']) + ' (' + str(enumerations['wrapped']) + ' wrapped)')
     variables = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
         if isinstance(node, VariableProxy) and not node.access in ['protected', 'private']:
