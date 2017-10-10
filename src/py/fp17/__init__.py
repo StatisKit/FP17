@@ -24,21 +24,21 @@ def report(asg):
     for node in asg.nodes():
         if isinstance(node, EnumerationProxy) and not node.access in ['protected', 'private']:
             enumerations['source'] += 1
-            enumerations['wrapped'] +=int(node.boost_python_export and (not isinstance(node.boost_python_export, bool) or not isinstance(node.parent.boost_python_export, bool))
+            enumerations['wrapped'] +=int(node.boost_python_export and (not isinstance(node.boost_python_export, bool) or not isinstance(node.parent.boost_python_export, bool)))
     if enumerations['source'] > 0:
-        print('Enumerations: ' + str(enumerations['source']) + ' (' + enumerations['wrapped']) + ' wrapped)')
+        print('Enumerations: ' + str(enumerations['source']) + ' (' + str(enumerations['wrapped']) + ' wrapped)')
     variables = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
         if isinstance(node, VariableProxy) and not node.access in ['protected', 'private']:
             variables['source'] += 1
-            variables['wrapped'] += int(node.boost_python_export and (not isinstance(node.boost_python_export, bool) or not isinstance(node.parent.boost_python_export, bool))
+            variables['wrapped'] += int(node.boost_python_export and (not isinstance(node.boost_python_export, bool) or not isinstance(node.parent.boost_python_export, bool)))
     if variables['source'] > 0:
         print('Variables: ' + str(variables['source']) + ' (' + str(variables['wrapped']) + ' wrapped)')
     functions = dict(source = 0, wrapped = 0)
     for node in asg.nodes():
         if isinstance(node, FunctionProxy) and not node.access in ['protected', 'private']:
             functions['source'] += 1
-            functions['wrapped'] += int(node.boost_python_export and (not isinstance(node.boost_python_export, bool) or not isinstance(node.parent.boost_python_export, bool))
+            functions['wrapped'] += int(node.boost_python_export and (not isinstance(node.boost_python_export, bool) or not isinstance(node.parent.boost_python_export, bool)))
     if functions['source'] > 0:
         print('Functions: ' + str(functions['source']) + ' (' + str(functions['wrapped']) + ' wrapped)')
     classes = dict(source = 0, wrapped = 0)
