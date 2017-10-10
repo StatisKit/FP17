@@ -67,8 +67,8 @@ Then, follow the given instructions.
   
 .. note::
 
-    These images correspond to the one used for the article.
-    Most recent images can be run using these commands in a shell:
+    These images correspond to the ones used for the article.
+    Most recent images can be runned using these commands in a shell:
 
     * For the *Python 2* version 
 
