@@ -103,7 +103,7 @@ Then, to install the required packages, proceed as as follows:
 
    .. code:: console
    
-     git clone https://github.com/StatisKit/FP17
+     git clone --recursive https://github.com/StatisKit/FP17
      
 2. Enter the cloned repository,
 
