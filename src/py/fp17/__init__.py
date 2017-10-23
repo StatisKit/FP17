@@ -48,10 +48,3 @@ def report(asg):
             classes['wrapped'] += int(node.boost_python_export and not isinstance(node.boost_python_export, bool))
     if classes['source'] > 0:
         print('Classes: ' + str(classes['source']) + ' (' + str(classes['wrapped']) + ' wrapped)')
-    specializations = dict(source = 0, wrapped = 0)
-    for node in asg.nodes():
-        if isinstance(node, ClassTemplateSpecializationProxy) and not node.access in ['protected', 'private']:
-            specializations['source'] += 1
-            specializations['wrapped'] += int(node.boost_python_export and not isinstance(node.boost_python_export, bool))
-    if specializations['source'] > 0:
-        print('Specializations: ' + str(specializations['source']) + ' (' + str(round(specializations['wrapped'] / float(specializations['source']) * 100, 2)) + '%)')
