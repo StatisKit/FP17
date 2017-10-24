@@ -53,6 +53,17 @@ matrix:
   - os: osx
     env: DOCKERFILE=fp17
          CONDA_VERSION=3
+  allow_failures:
+    - os: linux
+      env: CONDA_VERSION=2
+           CONDA_ENVIRONMENT=FP17
+           JUPYTER_NOTEBOOK=subset.ipynb
+           TRAVIS_WAIT=50
+    - os: osx
+      env: CONDA_VERSION=2
+           CONDA_ENVIRONMENT=FP17
+           JUPYTER_NOTEBOOK=subset.ipynb
+           TRAVIS_WAIT=50
 
 install:
   - git clone https://github.com/StatisKit/travis-ci.git travis-ci
