@@ -64,28 +64,37 @@ After `installing <https://docs.docker.com/engine/installation/>`_ **Docker**, y
     docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py3k
   
 Then, follow the given instructions.
-
+  
 .. note::
 
-    These images correspond to the one used for the article.
-    Most recent images can be run using these commands in a shell:
+    These images correspond to the ones used for the article.
+    Most recent images can be runned using these commands in a shell:
 
     * For the *Python 2* version 
 
       .. code-block:: console
 
-        docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py2k
+        docker run -i -t -p 8888:8888 statiskit/fp17:latest-py2k
    
     * For the *Python 3* version 
 
       .. code-block:: console
 
-        docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py3k
+        docker run -i -t -p 8888:8888 statiskit/fp17:latest-py3k
     
 Install it !
 ============
-
+  
 You can also install required packages on your computer to reproduce these studies.
+
+.. warning::
+
+  To use the examples without **Docker** you must install:
+  
+  * `Visual Studio Community 2013 <https://www.visualstudio.com/en-us/news/releasenotes/vs2013-community-vs>`_ for Windows OSes.
+  * **xcode=7.3** for OsX.
+  * **gcc=5** for Linus OSes.
+  
 In order to ease the installation of these packages on multiple operating systems, the **Conda** `package and environment management system <https://conda.io/docs/>`_ is used.
 For more information refers to the **StatisKit** software suite documentation concerning prerequisites to the `installation <http://statiskit.readthedocs.io/en/latest/user/install_it.html>`_ step.
 Then, to install the required packages, proceed as as follows:
@@ -94,7 +103,7 @@ Then, to install the required packages, proceed as as follows:
 
    .. code:: console
    
-     git clone https://github.com/StatisKit/FP17
+     git clone --recursive https://github.com/StatisKit/FP17
      
 2. Enter the cloned repository,
 
@@ -106,19 +115,7 @@ Then, to install the required packages, proceed as as follows:
 
    .. code:: console
 
-     conda create -f environment.yml
-     
-   .. warning::
-
-     The initial **Conda** binaries used for the article can be installed using these commands in a shell instead of the previous command:
-     
-     .. code-block:: console
-     
-      conda install -n root conda-build-all
-      conda build-all . --matrix-conditions 'python 2.7.x'
-      conda create --use-local -f environment.yml
-      
-     Replace :code:`'python 2.7.x'` by :code:`'python 3.6.x'` for building the *Python 3* binaries instead of the *Python 2*.
+     conda env create -f environment.yml
   
 4. Activate the **Conda** environment as advised in your terminal.
 

@@ -17,6 +17,7 @@ env:
   - CONDA_VERSION=2
     CONDA_ENVIRONMENT=FP17
     JUPYTER_NOTEBOOK=basic.ipynb
+    TRAVIS_WAIT=30
   - CONDA_VERSION=2
     CONDA_ENVIRONMENT=FP17
     JUPYTER_NOTEBOOK=subset.ipynb
@@ -27,9 +28,11 @@ env:
   - CONDA_VERSION=2
     CONDA_ENVIRONMENT=FP17
     JUPYTER_NOTEBOOK=dependent.ipynb
+    TRAVIS_WAIT=50
   - CONDA_VERSION=3
     CONDA_ENVIRONMENT=FP17
     JUPYTER_NOTEBOOK=basic.ipynb
+    TRAVIS_WAIT=30
   - CONDA_VERSION=3
     CONDA_ENVIRONMENT=FP17
     JUPYTER_NOTEBOOK=subset.ipynb
@@ -40,6 +43,7 @@ env:
   - CONDA_VERSION=3
     CONDA_ENVIRONMENT=FP17
     JUPYTER_NOTEBOOK=dependent.ipynb
+    TRAVIS_WAIT=50
   - DOCKERFILE=fp17
     CONDA_VERSION=2
   - DOCKERFILE=fp17
@@ -64,6 +68,9 @@ matrix:
            CONDA_ENVIRONMENT=FP17
            JUPYTER_NOTEBOOK=subset.ipynb
            TRAVIS_WAIT=50
+
+before_install:
+  - git submodule update --init --recursive
 
 install:
   - git clone https://github.com/StatisKit/travis-ci.git travis-ci
