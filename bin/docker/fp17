@@ -31,6 +31,6 @@ RUN echo "echo \"#                                                              
 RUN echo "echo \"##############################################################################\"" >> $HOME/.bashrc
 
 RUN echo "source activate root" >> $HOME/.bashrc
-RUN echo "export CPU_COUNT=1" >> $HOME/.bashrc
+RUN echo "export CPU_COUNT=`python -c "import multiprocessing; print(min(2, multiprocessing.cpu_count()))`"" >> $HOME/.bashrc
 
 WORKDIR /home/main/repository/share/jupyter
