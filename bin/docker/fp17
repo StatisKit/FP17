@@ -8,6 +8,14 @@ ARG GITHUB_REPO
 
 RUN git clone --recursive https://github.com/$GITHUB_USER/$GITHUB_REPO.git repository
 RUN conda env update -n root -f repository/environment.yml
+RUN conda download repository -c statiskit
+RUN mkdir $HOME/channel
+RUN cp $CONDA_PREFIX/pkgs $HOME/channel/linux-64
+RUN cd $HOME/linux-64 && conda index
+RUN echo "channels:" >> $HOME/.condarc
+RUN echo "  - file:///"$HOME"/channel"
+RUN echo "allow_other_channels: False" >> $HOME/.condarc
+RUN echo "auto_update_conda: False" >> $HOME/.condarc
 
 RUN echo "echo \"##############################################################################\"" >> $HOME/.bashrc
 RUN echo "echo \"#                                                                            #\"" >> $HOME/.bashrc
