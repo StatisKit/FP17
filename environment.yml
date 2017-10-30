@@ -2,6 +2,7 @@ name: FP17
 channels:
   - statiskit
   - conda-forge
+  - defaults
 dependencies:
   - statiskit-toolchain
   - gitpython
