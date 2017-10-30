@@ -5,7 +5,7 @@
    :target: https://travis-ci.org/StatisKit/FP17
   
 .. image:: https://ci.appveyor.com/api/projects/status/bwc7elajp21arif0/branch/master
-   :target: https://ci.appveyor.com/api/projects/status/bwc7elajp21arif0/branch/master
+   :target: https://ci.appveyor.com/project/pfernique/fp17/branch/master
 
 Material for the paper entitled "**AutoWIG**: automatic generation of *Python* bindings for *C++* libraries" and submitted to PeerJ Computer Science
 ====================================================================================================================================================
