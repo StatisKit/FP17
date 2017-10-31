@@ -10,7 +10,7 @@ RUN git clone --recursive https://github.com/$GITHUB_USER/$GITHUB_REPO.git repos
 RUN conda env update -n root -f repository/environment.yml
 RUN conda download repository -c statiskit
 RUN mkdir $HOME/channel
-RUN source activate root && cp $CONDA_PREFIX/pkgs $HOME/channel/linux-64
+RUN cp $HOME/miniconda/pkgs $HOME/channel/linux-64
 RUN cd $HOME/channel/linux-64 && conda index
 RUN echo "channels:" >> $HOME/.condarc
 RUN echo "  - file:///"$HOME"/channel"
