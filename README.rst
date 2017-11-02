@@ -43,7 +43,12 @@ Using **Docker** `images <https://docs.docker.com/>`_  and **Binder**  `servers 
 Online with **Binder**
 ----------------------
 
-To reproduce the studies online, use this `server <https://beta.mybinder.org/v2/gh/statiskit/fp17/master?filepath=share/jupyter/index.ipynb>`_.
+To reproduce the studies online, use this `server <https://beta.mybinder.org/v2/gh/statiskit/fp17/v1.0.0?filepath=share/jupyter/index.ipynb>`_.
+
+.. note::
+
+   This server corresponds to the one used for the article.
+   Most recent server can be runned using this `link <https://beta.mybinder.org/v2/gh/statiskit/fp17/master?filepath=share/jupyter/index.ipynb>`_.
 
 On your computer with **Docker**
 --------------------------------
