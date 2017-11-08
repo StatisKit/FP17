@@ -11,43 +11,44 @@ services:
   
 env:
   - CONDA_VERSION=2
-    CONDA_RECIPE=python-fp17
+    CONDA_RECIPE=bin/conda/python-fp17
   - CONDA_VERSION=3
-    CONDA_RECIPE=python-fp17
+    CONDA_RECIPE=bin/conda/python-fp17
   - CONDA_VERSION=2
-    CONDA_ENVIRONMENT=FP17
-    JUPYTER_NOTEBOOK=basic.ipynb
+    CONDA_ENVIRONMENT=environment.yml
+    JUPYTER_NOTEBOOK=share/jupyter/basic.ipynb
     TRAVIS_WAIT=30
   - CONDA_VERSION=2
-    CONDA_ENVIRONMENT=FP17
-    JUPYTER_NOTEBOOK=subset.ipynb
+    CONDA_ENVIRONMENT=environment.yml
+    JUPYTER_NOTEBOOK=share/jupyter/subset.ipynb
     TRAVIS_WAIT=50
   - CONDA_VERSION=2
-    CONDA_ENVIRONMENT=FP17
-    JUPYTER_NOTEBOOK=template.ipynb
+    CONDA_ENVIRONMENT=environment.yml
+    JUPYTER_NOTEBOOK=share/jupyter/template.ipynb
+    TRAVIS_WAIT=30
   - CONDA_VERSION=2
-    CONDA_ENVIRONMENT=FP17
-    JUPYTER_NOTEBOOK=dependent.ipynb
+    CONDA_ENVIRONMENT=environment.yml
+    JUPYTER_NOTEBOOK=share/jupyter/dependent.ipynb
     TRAVIS_WAIT=50
   - CONDA_VERSION=3
-    CONDA_ENVIRONMENT=FP17
-    JUPYTER_NOTEBOOK=basic.ipynb
+    CONDA_ENVIRONMENT=environment.yml
+    JUPYTER_NOTEBOOK=share/jupyter/basic.ipynb
     TRAVIS_WAIT=30
   - CONDA_VERSION=3
-    CONDA_ENVIRONMENT=FP17
-    JUPYTER_NOTEBOOK=subset.ipynb
+    CONDA_ENVIRONMENT=environment.yml
+    JUPYTER_NOTEBOOK=share/jupyter/subset.ipynb
     TRAVIS_WAIT=50
   - CONDA_VERSION=3
-    CONDA_ENVIRONMENT=FP17
-    JUPYTER_NOTEBOOK=template.ipynb
+    CONDA_ENVIRONMENT=environment.yml
+    JUPYTER_NOTEBOOK=share/jupyter/template.ipynb
     TRAVIS_WAIT=30
   - CONDA_VERSION=3
-    CONDA_ENVIRONMENT=FP17
-    JUPYTER_NOTEBOOK=dependent.ipynb
+    CONDA_ENVIRONMENT=environment.yml
+    JUPYTER_NOTEBOOK=share/jupyter/dependent.ipynb
     TRAVIS_WAIT=50
-  - DOCKERFILE=fp17
+  - DOCKERFILE=bin/docker/fp17
     CONDA_VERSION=2
-  - DOCKERFILE=fp17
+  - DOCKERFILE=bin/docker/fp17
     CONDA_VERSION=3  
     
 matrix:
@@ -62,12 +63,12 @@ matrix:
     - os: linux
       env: CONDA_VERSION=2
            CONDA_ENVIRONMENT=FP17
-           JUPYTER_NOTEBOOK=subset.ipynb
+           JUPYTER_NOTEBOOK=share/jupyter/subset.ipynb
            TRAVIS_WAIT=50
     - os: osx
       env: CONDA_VERSION=2
            CONDA_ENVIRONMENT=FP17
-           JUPYTER_NOTEBOOK=subset.ipynb
+           JUPYTER_NOTEBOOK=share/jupyter/subset.ipynb
            TRAVIS_WAIT=50
 
 before_install:
