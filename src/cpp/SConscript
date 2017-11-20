@@ -7,7 +7,7 @@ system = platform.system().lower()
 
 Import("env")
 
-cppenv = env.Clone(tools = ['cpp'])
+cppenv = env.Clone(tools = ['toolchain', 'cpp'])
 
 cppenv.AppendUnique(CPPDEFINES = ['LIBBASIC'])
 
