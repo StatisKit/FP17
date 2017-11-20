@@ -33,6 +33,7 @@ about:
 
 requirements:
     build:
+        - libtoolchain
         - python-toolchain
         - python
     run:
