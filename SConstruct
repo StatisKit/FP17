@@ -3,7 +3,7 @@
 import os
 from SCons.Errors import EnvironmentError
 
-env = Environment(tools = ['prefix'])
+env = Environment(tools = ['toolchain'])
 
 VariantDir('build', 'src')
 try:
