@@ -36,10 +36,17 @@ requirements:
         - libtoolchain
         - python-toolchain
         - python
+        - python-autowig
+        - gitpython
+        - jupyter
+        - matplotlib
     run:
         - python
         - python-autowig
-
+        - gitpython
+        - jupyter
+        - matplotlib
+        
 test:
   commands:
     - python -c "from fp17 import report"

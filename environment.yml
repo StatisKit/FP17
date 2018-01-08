@@ -1,6 +1,4 @@
 name: FP17
-channels:
-  - statiskit
 dependencies:
   - statiskit-toolchain
   - gitpython

@@ -8,22 +8,22 @@ environment:
       CONDA_RECIPE: python-fp17
     - CONDA_VERSION: 3
       CONDA_RECIPE: python-fp17
-    - CONDA_ENVIRONMENT: FP17
+    - CONDA_PACKAGES: python-fp17
       JUPYTER_NOTEBOOK: basic.ipynb
       CONDA_VERSION: 2
-    - CONDA_ENVIRONMENT: FP17
+    - CONDA_PACKAGES: python-fp17
       JUPYTER_NOTEBOOK: subset.ipynb
       CONDA_VERSION: 2
-    - CONDA_ENVIRONMENT: FP17
+    - CONDA_PACKAGES: python-fp17
       JUPYTER_NOTEBOOK: template.ipynb
       CONDA_VERSION: 2
-    - CONDA_ENVIRONMENT: FP17
+    - CONDA_PACKAGES: python-fp17
       JUPYTER_NOTEBOOK: basic.ipynb
       CONDA_VERSION: 3
-    - CONDA_ENVIRONMENT: FP17
+    - CONDA_PACKAGES: python-fp17
       JUPYTER_NOTEBOOK: subset.ipynb
       CONDA_VERSION: 3
-    - CONDA_ENVIRONMENT: FP17
+    - CONDA_PACKAGES: python-fp17
       JUPYTER_NOTEBOOK: template.ipynb
       CONDA_VERSION: 3
 
