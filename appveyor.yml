@@ -1,3 +1,11 @@
+branches:
+  except:
+    - doc
+    - unix
+    
+# image: Visual Studio 2015 Update 2
+image: Visual Studio 2013
+
 platform:
   - x86
   - x64
@@ -5,25 +13,25 @@ platform:
 environment:
   matrix:
     - CONDA_VERSION: 2
-      CONDA_RECIPE: python-fp17
+      CONDA_RECIPE: bin\conda\fp17
     - CONDA_VERSION: 3
-      CONDA_RECIPE: python-fp17
-    - CONDA_PACKAGES: python-fp17
+      CONDA_RECIPE: bin\conda\fp17
+    - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: basic.ipynb
       CONDA_VERSION: 2
-    - CONDA_PACKAGES: python-fp17
+    - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: subset.ipynb
       CONDA_VERSION: 2
-    - CONDA_PACKAGES: python-fp17
+    - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: template.ipynb
       CONDA_VERSION: 2
-    - CONDA_PACKAGES: python-fp17
+    - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: basic.ipynb
       CONDA_VERSION: 3
-    - CONDA_PACKAGES: python-fp17
+    - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: subset.ipynb
       CONDA_VERSION: 3
-    - CONDA_PACKAGES: python-fp17
+    - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: template.ipynb
       CONDA_VERSION: 3
 
@@ -43,8 +51,6 @@ after_build:
 
 deploy:
   provider: Script
-  on:
-    branch: master
  
 before_deploy:
   - call before_deploy.bat

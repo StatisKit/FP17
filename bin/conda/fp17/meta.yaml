@@ -1,0 +1,38 @@
+package:
+    name: fp17
+    version: "1.0.0"
+
+source:
+    path: ../../..
+  
+build:
+    number: 0
+    script: 
+        - scons py --prefix={{ PREFIX }} -j{{ CPU_COUNT }} --package=fp17                        [unix]
+        - scons py --prefix={{ LIBRARY_PREFIX }} -j{{ CPU_COUNT }} --arch=%ARCH% --package=fp17  [win]
+                
+about:
+    home: http://autowig.readthedocs.io/
+    license: Apache License 2.0
+
+requirements:
+    build:
+        - libtoolchain
+        - python-toolchain
+        - python
+        - python-autowig
+        - python-clanglite
+        - gitpython
+        - jupyter
+        - matplotlib
+    run:
+        - python
+        - python-autowig
+        - python-clanglite
+        - gitpython
+        - jupyter
+        - matplotlib
+        
+test:
+  commands:
+    - python -c "from fp17 import report"
