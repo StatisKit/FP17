@@ -1,21 +1,23 @@
 ARG CONDA_VERSION=2
-ARG GITHUB_USER=statiskit
-ARG GITHUB_REPO=fp17
-FROM "statiskit/ubuntu:latest-py"$CONDA_VERSION"k"
+# ARG GITHUB_USER=statiskit
+# ARG GITHUB_REPO=fp17
+FROM "statiskit/linux-"$ARCH":latest-py"$CONDA_VERSION"k"
 ARG CONDA_VERSION
-ARG GITHUB_USER
-ARG GITHUB_REPO
+# ARG GITHUB_USER
+# ARG GITHUB_REPO
 
-RUN git clone --recursive https://github.com/$GITHUB_USER/$GITHUB_REPO.git repository
-RUN conda env update -n root -f repository/environment.yml
-RUN conda download repository -c statiskit
-RUN mkdir $HOME/channel
-RUN cp -rf $HOME/miniconda/pkgs $HOME/channel/linux-64
-RUN cd $HOME/channel/linux-64 && conda index
-RUN echo "channels:" >> $HOME/.condarc
-RUN echo "  - file:///"$HOME"/channel"
-RUN echo "allow_other_channels: False" >> $HOME/.condarc
-RUN echo "auto_update_conda: False" >> $HOME/.condarc
+RUN conda install -n root fp17 -c statiskit
+
+# RUN git clone --recursive https://github.com/$GITHUB_USER/$GITHUB_REPO.git repository
+# RUN conda env update -n root -f repository/environment.yml
+# RUN conda download repository -c statiskit
+# RUN mkdir $HOME/channel
+# RUN cp -rf $HOME/miniconda/pkgs $HOME/channel/linux-64
+# RUN cd $HOME/channel/linux-64 && conda index
+# RUN echo "channels:" >> $HOME/.condarc
+# RUN echo "  - file:///"$HOME"/channel"
+# RUN echo "allow_other_channels: False" >> $HOME/.condarc
+# RUN echo "auto_update_conda: False" >> $HOME/.condarc
 
 RUN echo "echo \"##############################################################################\"" >> $HOME/.bashrc
 RUN echo "echo \"#                                                                            #\"" >> $HOME/.bashrc

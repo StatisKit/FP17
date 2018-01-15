@@ -26,9 +26,11 @@ requirements:
         - jupyter
         - matplotlib
     run:
+        - {{ pin_compatible('libtoolchain', exact=True) }}
+        - {{ pin_compatible('python-toolchain', exact=True) }}
         - python
-        - python-autowig
-        - python-clanglite
+        - {{ pin_compatible('python-autowig', exact=True) }}
+        - {{ pin_compatible('python-clanglite', exact=True) }}
         - gitpython
         - jupyter
         - matplotlib
