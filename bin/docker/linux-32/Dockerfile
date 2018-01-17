@@ -6,9 +6,9 @@ COPY README /home/main/README
 RUN rm /home/main/.condarc
 COPY .condarc /home/main/.condarc
 RUN conda install -n $CONDA_DEFAULT_ENV fp17
+UN echo "source activate fp17" >> .bashrc
 RUN echo "cat /home/main/README" >> .bashrc
 
-COPY release.sh /home/main/release.sh
-COPY deploy.sh /home/main/deploy.sh
-
+RUN conda create -n fp17 fp17
+RUN git clone --recursive https://github.com/StatisKit/FP17
 WORKDIR /home/main/FP17/share/jupyter
