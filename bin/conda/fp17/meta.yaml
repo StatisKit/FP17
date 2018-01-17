@@ -17,22 +17,14 @@ about:
 
 requirements:
     build:
-        - libtoolchain
-        - python-toolchain
         - python
-        - python-autowig
-        - python-clanglite
-        - libboost_python-dev
+        - statiskit-dev
         - gitpython
         - jupyter
         - matplotlib
     run:
-        - {{ pin_compatible('libtoolchain', exact=True) }}
-        - {{ pin_compatible('python-toolchain', exact=True) }}
         - python
-        - {{ pin_compatible('python-autowig', exact=True) }}
-        - {{ pin_compatible('python-clanglite', exact=True) }}
-        - {{ pin_compatible('libboost_python-dev', exact=True) }}
+        - {{ pin_compatible('statiskit-dev', exact=True) }}
         - gitpython
         - jupyter
         - matplotlib
