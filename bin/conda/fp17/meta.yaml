@@ -22,6 +22,7 @@ requirements:
         - python
         - python-autowig
         - python-clanglite
+        - libboost_python-dev
         - gitpython
         - jupyter
         - matplotlib
@@ -31,6 +32,7 @@ requirements:
         - python
         - {{ pin_compatible('python-autowig', exact=True) }}
         - {{ pin_compatible('python-clanglite', exact=True) }}
+        - {{ pin_compatible('libboost_python-dev', exact=True) }}
         - gitpython
         - jupyter
         - matplotlib
