@@ -52,18 +52,22 @@ env:
     CONDA_PACKAGES=fp17
     JUPYTER_NOTEBOOK=share/jupyter/dependent.ipynb
     TRAVIS_WAIT=50
-  - DOCKER_CONTEXT=bin/docker/fp17
-    CONDA_VERSION=2
-  - DOCKER_CONTEXT=bin/docker/fp17
+  - DOCKER_CONTEXT=bin/docker/linux-64
+    DOCKER_CONTAINER=fp17
+    CONDA_VERSION=2  
+  - DOCKER_CONTEXT=bin/docker/linux-64
+    DOCKER_CONTAINER=fp17
     CONDA_VERSION=3  
     
 matrix:
   exclude:
   - os: osx
-    env: DOCKER_CONTEXT=bin/docker/fp17
+    env: DOCKER_CONTEXT=bin/docker/linux-64
+         DOCKER_CONTAINER=fp17
          CONDA_VERSION=2
   - os: osx
-    env: DOCKER_CONTEXT=bin/docker/fp17
+    env: DOCKER_CONTEXT=bin/docker/linux-64
+         DOCKER_CONTAINER=fp17
          CONDA_VERSION=3
   allow_failures:
     - os: linux
