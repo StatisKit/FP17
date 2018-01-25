@@ -1,6 +1,6 @@
 name: FP17
 channels:
   - statiskit
-  - statiskit/label/unstable 
+  - statiskit/label/linux-x86_64_release 
 dependencies:
   - fp17
