@@ -43,6 +43,10 @@ Using **Docker** `images <https://docs.docker.com/>`_  and **Binder**  `servers 
 Online with **Binder**
 ----------------------
 
+.. warning::
+
+   Currently, **Binder** does not work with this repository due to timeouts.
+   
 To reproduce the studies online, use this `server <https://beta.mybinder.org/v2/gh/statiskit/fp17/v1.0.0?filepath=share/jupyter/index.ipynb>`_.
 
 .. note::

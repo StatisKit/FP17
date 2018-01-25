@@ -1,7 +1,6 @@
 name: FP17
+channels:
+  - statiskit
+  - statiskit/label/linux-x86_64_release 
 dependencies:
-  - statiskit-toolchain
-  - gitpython
-  - python-fp17
-  - jupyter
-  - matplotlib
+  - fp17
