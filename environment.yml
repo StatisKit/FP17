@@ -1,7 +1,6 @@
 name: FP17
+channels:
+  - statiskit
+  - statiskit/label/unstable 
 dependencies:
-  - statiskit-toolchain
-  - gitpython
-  - python-fp17
-  - jupyter
-  - matplotlib
+  - fp17
