@@ -116,12 +116,21 @@ Then, to install the required packages, proceed as as follows:
    
      cd FP17
      
-3. Install the given **Conda** environment,
+3. Create a **Conda** environment containing the meta-package `fp17`,
 
    .. code:: console
 
-     conda env create -f environment.yml
+     conda create -n fp17 fp17=1.0.0 -c statiskit
   
+  .. note::
+
+    This meta-package corresponds to the one used for the article.
+    Most recent  meta-package can be installed using these commands in a shell:
+    
+    .. code:: console
+
+      conda create -n fp17 fp17 -c statiskit
+     
 4. Activate the **Conda** environment as advised in your terminal.
 
 5. Enter the :code:`share` repository,
