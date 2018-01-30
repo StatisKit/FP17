@@ -80,7 +80,17 @@ matrix:
            CONDA_PACKAGES=fp17
            JUPYTER_NOTEBOOK=share/jupyter/subset.ipynb
            TRAVIS_WAIT=50
-
+    - os: linux
+      env: CONDA_VERSION=3
+           CONDA_PACKAGES=fp17
+           JUPYTER_NOTEBOOK=share/jupyter/subset.ipynb
+           TRAVIS_WAIT=50
+    - os: osx
+      env: CONDA_VERSION=3
+           CONDA_PACKAGES=fp17
+           JUPYTER_NOTEBOOK=share/jupyter/subset.ipynb
+           TRAVIS_WAIT=50
+           
 before_install:
   - git submodule update --init --recursive
 
