@@ -7,7 +7,6 @@ branches:
 image: Visual Studio 2013
 
 platform:
-  - x86
   - x64
 
 environment:
@@ -17,24 +16,35 @@ environment:
     - CONDA_VERSION: 3
       CONDA_RECIPE: bin\conda\fp17
     - CONDA_PACKAGES: fp17
-      JUPYTER_NOTEBOOK: basic.ipynb
+      JUPYTER_NOTEBOOK: share\jupyter\basic.ipynb
       CONDA_VERSION: 2
     - CONDA_PACKAGES: fp17
-      JUPYTER_NOTEBOOK: subset.ipynb
+      JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
       CONDA_VERSION: 2
     - CONDA_PACKAGES: fp17
-      JUPYTER_NOTEBOOK: template.ipynb
+      JUPYTER_NOTEBOOK: share\jupyter\template.ipynb
       CONDA_VERSION: 2
     - CONDA_PACKAGES: fp17
-      JUPYTER_NOTEBOOK: basic.ipynb
+      JUPYTER_NOTEBOOK: share\jupyter\basic.ipynb
       CONDA_VERSION: 3
     - CONDA_PACKAGES: fp17
-      JUPYTER_NOTEBOOK: subset.ipynb
+      JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
       CONDA_VERSION: 3
     - CONDA_PACKAGES: fp17
-      JUPYTER_NOTEBOOK: template.ipynb
+      JUPYTER_NOTEBOOK: share\jupyter\template.ipynb
       CONDA_VERSION: 3
 
+matrix:
+  allow_failures:
+    - platform: x64
+      CONDA_PACKAGES: fp17
+      JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
+      CONDA_VERSION: 2      
+    - platform: x64
+      CONDA_PACKAGES: fp17
+      JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
+      CONDA_VERSION: 3
+      
 install:
   - git clone https://github.com/StatisKit/appveyor-ci.git appveyor-ci
   - cd appveyor-ci
