@@ -118,18 +118,22 @@ Then, to install the required packages, proceed as as follows:
      
 3. Create a **Conda** environment containing the meta-package `fp17`,
 
-   .. code:: console
+   * For the *Python 2* version 
+      
+     .. code:: console
 
-     conda create -n fp17 fp17=1.0.0 -c statiskit
-  
-  .. note::
+       conda create -n fp17py2k fp17=1.0.0 python=2 -c statiskit -c defaults --override-channels
+ 
+   * For the *Python 2* version 
+      
+     .. code:: console
 
-    This meta-package corresponds to the one used for the article.
-    Most recent  meta-package can be installed using these commands in a shell:
-    
-    .. code:: console
+       conda create -n fp17py3k fp17=1.0.0 python=3 -c statiskit -c defaults --override-channels
 
-      conda create -n fp17 fp17 -c statiskit
+   .. note::
+
+     This meta-package corresponds to the one used for the article.
+     Most recent meta-package can be installed by replacing `fp17=1.0.0` by `fp17` in previous command lines
      
 4. Activate the **Conda** environment as advised in your terminal.
 
