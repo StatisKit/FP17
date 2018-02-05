@@ -110,13 +110,7 @@ Then, to install the required packages, proceed as as follows:
    
      git clone --recursive https://github.com/StatisKit/FP17
      
-2. Enter the cloned repository,
-
-   .. code:: console
-   
-     cd FP17
-     
-3. Create a **Conda** environment containing the meta-package `fp17`,
+2. Create a **Conda** environment containing the meta-package :code:`fp17`,
 
    * For the *Python 2* version 
       
@@ -133,26 +127,22 @@ Then, to install the required packages, proceed as as follows:
    .. note::
 
      This meta-package corresponds to the one used for the article.
-     Most recent meta-package can be installed by replacing `fp17=1.0.0` by `fp17` in previous command lines
+     Most recent meta-package can be installed by replacing :code:`fp17=1.0.0` by :code:`fp17` in previous command lines
      
-4. Activate the **Conda** environment as advised in your terminal.
+3. Activate the **Conda** environment as advised in your terminal.
 
-5. Enter the :code:`share` repository,
+4. Enter the directory containing **Jupyter** notebooks,
 
    .. code:: console
    
+     cd FP17
      cd share
-     
-6. Enter the :code:`jupyter` repository,
-
-   .. code:: console
-   
      cd jupyter
      
-7. Launch the **Jupyter** the `index.ipynb <jupyter/index.ipynb>`_ notebook,
+5. Launch the **Jupyter** the `index.ipynb <jupyter/index.ipynb>`_ notebook,
 
    .. code:: console
 
      jupyter notebook index.ipynb
      
-8. Execute the `index.ipynb <share/jupyter/index.ipynb>`_ notebook to execute all examples or navigate among referenced notebooks to execute them separatly.
+6. Execute the `index.ipynb <share/jupyter/index.ipynb>`_ notebook to execute all examples or navigate among referenced notebooks to execute them separatly.
