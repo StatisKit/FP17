@@ -124,7 +124,7 @@ Then, to install the required packages, proceed as as follows:
 
        conda create -n fp17py2k fp17=1.0.0 python=2 -c statiskit -c defaults --override-channels
  
-   * For the *Python 2* version 
+   * For the *Python 3* version 
       
      .. code:: console
 
