@@ -3,7 +3,6 @@ branches:
   - doc
   - win
   
-
 language: cpp
 
 os:
@@ -90,12 +89,9 @@ matrix:
            CONDA_PACKAGES=fp17
            JUPYTER_NOTEBOOK=share/jupyter/subset.ipynb
            TRAVIS_WAIT=50
-           
-before_install:
-  - git submodule update --init --recursive
 
 install:
-  - git clone https://github.com/StatisKit/travis-ci.git travis-ci
+  - git clone --depth=1  https://github.com/StatisKit/travis-ci.git travis-ci
   - cd travis-ci
   - source install.sh
 

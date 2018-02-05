@@ -46,7 +46,7 @@ matrix:
       CONDA_VERSION: 3
       
 install:
-  - git clone https://github.com/StatisKit/appveyor-ci.git appveyor-ci
+  - git clone --depth=1 https://github.com/StatisKit/appveyor-ci.git appveyor-ci
   - cd appveyor-ci
   - call install.bat
     
