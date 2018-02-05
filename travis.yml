@@ -47,10 +47,6 @@ env:
     CONDA_PACKAGES=fp17
     JUPYTER_NOTEBOOK=share/jupyter/template.ipynb
     TRAVIS_WAIT=30
-  - CONDA_VERSION=3
-    CONDA_PACKAGES=fp17
-    JUPYTER_NOTEBOOK=share/jupyter/dependent.ipynb
-    TRAVIS_WAIT=50
   - DOCKER_CONTEXT=bin/docker/linux-64
     DOCKER_CONTAINER=fp17
     CONDA_VERSION=2  
