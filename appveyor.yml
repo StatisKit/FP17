@@ -37,10 +37,14 @@ environment:
 
 matrix:
   allow_failures:
-    - CONDA_PACKAGES: fp17
+    - image: Visual Studio 2013
+      platform: x64
+      CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
       CONDA_VERSION: 2      
-    - CONDA_PACKAGES: fp17
+    - image: Visual Studio 2013
+      platform: x64
+      CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
       CONDA_VERSION: 3
       
