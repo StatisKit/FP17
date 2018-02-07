@@ -36,12 +36,10 @@ environment:
 
 matrix:
   allow_failures:
-    - platform: x64
-      CONDA_PACKAGES: fp17
+    - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
       CONDA_VERSION: 2      
-    - platform: x64
-      CONDA_PACKAGES: fp17
+    - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
       CONDA_VERSION: 3
       
