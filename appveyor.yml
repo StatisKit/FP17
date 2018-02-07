@@ -6,8 +6,7 @@ branches:
 # image: Visual Studio 2015 Update 2
 image: Visual Studio 2013
 
-platform:
-  - x64
+platform: x64
 
 environment:
   matrix:
@@ -19,32 +18,28 @@ environment:
       JUPYTER_NOTEBOOK: share\jupyter\basic.ipynb
       CONDA_VERSION: 2
     - CONDA_PACKAGES: fp17
-      JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
-      CONDA_VERSION: 2
-    - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: share\jupyter\template.ipynb
       CONDA_VERSION: 2
     - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: share\jupyter\basic.ipynb
       CONDA_VERSION: 3
     - CONDA_PACKAGES: fp17
-      JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
-      CONDA_VERSION: 3
-    - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: share\jupyter\template.ipynb
       CONDA_VERSION: 3
     - ANACONDA_RELEASE: true
-
+    - CONDA_PACKAGES: fp17
+      JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
+      CONDA_VERSION: 2
+    - CONDA_PACKAGES: fp17
+      JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
+      CONDA_VERSION: 3
+      
 matrix:
   allow_failures:
-    - image: Visual Studio 2013
-      platform: x64
-      CONDA_PACKAGES: fp17
+    - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
-      CONDA_VERSION: 2      
-    - image: Visual Studio 2013
-      platform: x64
-      CONDA_PACKAGES: fp17
+      CONDA_VERSION: 2
+    - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
       CONDA_VERSION: 3
       
