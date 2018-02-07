@@ -53,6 +53,7 @@ env:
   - DOCKER_CONTEXT=bin/docker/linux-64
     DOCKER_CONTAINER=fp17
     CONDA_VERSION=3  
+  - ANACONDA_RELEASE=true
     
 matrix:
   exclude:

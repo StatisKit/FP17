@@ -33,6 +33,7 @@ environment:
     - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: share\jupyter\template.ipynb
       CONDA_VERSION: 3
+    - ANACONDA_RELEASE: true
 
 matrix:
   allow_failures:
