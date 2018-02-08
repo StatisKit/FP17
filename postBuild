@@ -1,13 +1,12 @@
 #!/bin/bash
 
-source activate
-mkdir -p $CONDA_PREFIX/etc/conda/activate.d
-touch $CONDA_PREFIX/etc/conda/activate.d/activate-cpu-count.sh
-echo "export CPU_COUNT=1" > $CONDA_PREFIX/etc/conda/activate.d/activate-cpu-count.sh
+mkdir -p /srv/conda/etc/conda/activate.d
+touch /srv/conda/etc/conda/activate.d/activate-cpu-count.sh
+echo "export CPU_COUNT=1" > /srv/conda/etc/conda/activate.d/activate-cpu-count.sh
 
-mkdir -p $CONDA_PREFIX/etc/conda/deactivate.d
-touch $CONDA_PREFIX/etc/conda/activate.d/deactivate-cpu-count.sh
-echo "unset CPU_COUNT" > $CONDA_PREFIX/etc/conda/deactivate.d/deactivate-cpu-count.sh
+mkdir -p /srv/conda/etc/conda/deactivate.d
+touch /srv/conda/etc/conda/activate.d/deactivate-cpu-count.sh
+echo "unset CPU_COUNT" > /srv/conda/etc/conda/deactivate.d/deactivate-cpu-count.sh
 
 export GIT_TAG=`git tag --points-at HEAD`
 if [[ ! "$GIT_TAG" = "" ]]; then
