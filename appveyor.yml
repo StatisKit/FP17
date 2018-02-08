@@ -18,21 +18,21 @@ environment:
       JUPYTER_NOTEBOOK: share\jupyter\basic.ipynb
       CONDA_VERSION: 2
     - CONDA_PACKAGES: fp17
-      JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
-      CONDA_VERSION: 2
-    - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: share\jupyter\template.ipynb
       CONDA_VERSION: 2
     - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: share\jupyter\basic.ipynb
       CONDA_VERSION: 3
     - CONDA_PACKAGES: fp17
-      JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
-      CONDA_VERSION: 3
-    - CONDA_PACKAGES: fp17
       JUPYTER_NOTEBOOK: share\jupyter\template.ipynb
       CONDA_VERSION: 3
     - ANACONDA_RELEASE: true
+    - CONDA_PACKAGES: fp17
+      JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
+      CONDA_VERSION: 2
+    - CONDA_PACKAGES: fp17
+      JUPYTER_NOTEBOOK: share\jupyter\subset.ipynb
+      CONDA_VERSION: 3
       
 matrix:
   allow_failures:
