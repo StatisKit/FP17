@@ -1,0 +1,2 @@
+conda install fp17 conda-build -c statiskit -c defaults --override-channels
+cd share\jupyter

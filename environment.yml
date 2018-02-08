@@ -1,6 +1,0 @@
-name: FP17
-channels:
-  - statiskit
-dependencies:
-  - fp17
-  - conda-build
