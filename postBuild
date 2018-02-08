@@ -1,16 +1,7 @@
 #!/bin/bash
 
-curl https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -o miniconda.sh
-rm -rf $HOME/miniconda
-chmod a+rwx miniconda.sh
-./miniconda.sh -b -p $HOME/miniconda
-export PATH=$HOME/miniconda/bin:$PATH
 export GIT_TAG=`git tag --points-at HEAD`
-if [[ "$GIT_TAG" = "" ]]; then
-    conda install fp17 conda-build -c statiskit -c defaults --override-channels
-else
+if [[ ! "$GIT_TAG" = "" ]]; then
     GIT_VERSION=`echo $GIT_TAG | tail -c +2`
-    conda install fp17=$GIT_VERSION conda-build -c statiskit -c defaults --override-channels
+    conda install fp17=$GIT_VERSION -c statiskit -c defaults --override-channels
 fi
-echo "source $HOME/miniconda/bin/activate" >> .bashrc
-echo "cd share/jupyter" >> .bashrc

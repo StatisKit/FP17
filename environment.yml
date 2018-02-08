@@ -1,0 +1,6 @@
+channels:
+  - statiskit
+  - defaults
+dependencies:
+  - fp17
+  - conda-build
