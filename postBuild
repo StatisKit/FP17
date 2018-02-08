@@ -1,2 +1,7 @@
+curl https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -o miniconda.sh
+rm -rf $HOME/miniconda
+chmod a+rwx miniconda.sh
+./miniconda.sh -b -p $HOME/miniconda
+export PATH=$HOME/miniconda/bin:$PATH
 conda install fp17 conda-build -c statiskit -c defaults --override-channels
-cd share\jupyter
+cd share/jupyter
