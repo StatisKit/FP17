@@ -4,11 +4,9 @@ chmod a+rwx miniconda.sh
 ./miniconda.sh -b -p $HOME/miniconda
 export PATH=$HOME/miniconda/bin:$PATH
 export GIT_TAG=`git tag --points-at HEAD`
-if [[ "$GIT_TAG" = "" ]]; then
+if [ "$GIT_TAG" = "" ]; then
     conda install fp17 conda-build -c statiskit -c defaults --override-channels
 else
     GIT_VERSION=`echo $GIT_TAG | tail -c +2`
     conda install fp17=$GIT_VERSION conda-build -c statiskit -c defaults --override-channels
 fi
-source activate
-cd share/jupyter
