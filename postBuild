@@ -1,0 +1,7 @@
+#!/bin/bash
+
+export GIT_TAG=`git tag --points-at HEAD`
+if [[ ! "$GIT_TAG" = "" ]]; then
+    GIT_VERSION=`echo $GIT_TAG | tail -c +2`
+    conda install fp17=$GIT_VERSION -c statiskit -c defaults --override-channels
+fi
