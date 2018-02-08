@@ -34,7 +34,7 @@ env:
   - CONDA_VERSION=2
     CONDA_PACKAGES=fp17
     JUPYTER_NOTEBOOK=share/jupyter/dependent.ipynb
-    TRAVIS_WAIT=50
+    # TRAVIS_WAIT=50
   - CONDA_VERSION=3
     CONDA_PACKAGES=fp17
     JUPYTER_NOTEBOOK=share/jupyter/basic.ipynb
