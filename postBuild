@@ -1,3 +1,5 @@
+#!/bin/bash
+
 curl https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -o miniconda.sh
 rm -rf $HOME/miniconda
 chmod a+rwx miniconda.sh
@@ -10,3 +12,6 @@ else
     GIT_VERSION=`echo $GIT_TAG | tail -c +2`
     conda install fp17=$GIT_VERSION conda-build -c statiskit -c defaults --override-channels
 fi
+source activate
+# echo "source $HOME/miniconda/bin/activate" >> .bashrc
+# echo "cd share/jupyter" >> .bashrc
