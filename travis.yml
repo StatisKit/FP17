@@ -15,21 +15,21 @@ services:
   - docker
   
 env:
-  # - CONDA_VERSION=2
-  #   CONDA_RECIPE=bin/conda/fp17
-  # - CONDA_VERSION=3
-  #   CONDA_RECIPE=bin/conda/fp17
-  # - CONDA_VERSION=2
-  #   CONDA_PACKAGES=fp17
-  #   JUPYTER_NOTEBOOK=share/jupyter/basic.ipynb
-  # - CONDA_VERSION=2
-  #   CONDA_PACKAGES=fp17
-  #   JUPYTER_NOTEBOOK=share/jupyter/subset.ipynb
-  #   TRAVIS_WAIT=50
-  # - CONDA_VERSION=2
-  #   CONDA_PACKAGES=fp17
-  #   JUPYTER_NOTEBOOK=share/jupyter/template.ipynb
-  #   TRAVIS_WAIT=50
+  - CONDA_VERSION=2
+    CONDA_RECIPE=bin/conda/fp17
+  - CONDA_VERSION=3
+    CONDA_RECIPE=bin/conda/fp17
+  - CONDA_VERSION=2
+    CONDA_PACKAGES=fp17
+    JUPYTER_NOTEBOOK=share/jupyter/basic.ipynb
+  - CONDA_VERSION=2
+    CONDA_PACKAGES=fp17
+    JUPYTER_NOTEBOOK=share/jupyter/subset.ipynb
+    TRAVIS_WAIT=50
+  - CONDA_VERSION=2
+    CONDA_PACKAGES=fp17
+    JUPYTER_NOTEBOOK=share/jupyter/template.ipynb
+    TRAVIS_WAIT=50
   - CONDA_VERSION=2
     CONDA_PACKAGES=fp17
     JUPYTER_NOTEBOOK=share/jupyter/dependent.ipynb
@@ -84,11 +84,6 @@ matrix:
            CONDA_PACKAGES=fp17
            JUPYTER_NOTEBOOK=share/jupyter/subset.ipynb
            TRAVIS_WAIT=50
-    # - os: linux
-    #   env: CONDA_VERSION=2
-    #        CONDA_PACKAGES=fp17
-    #        JUPYTER_NOTEBOOK=share/jupyter/dependent.ipynb
-    #        TRAVIS_WAIT=50
            
 install:
   - git clone --depth=1  https://github.com/StatisKit/travis-ci.git travis-ci
