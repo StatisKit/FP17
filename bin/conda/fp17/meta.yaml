@@ -18,12 +18,14 @@ requirements:
         - statiskit-dev
         - gitpython
         - jupyter
+        - ipykernel
         - matplotlib
     run:
         - python
         - {{ pin_compatible('statiskit-dev', exact=True) }}
         - gitpython
         - jupyter
+        - ipykernel
         - matplotlib
         
 test:
