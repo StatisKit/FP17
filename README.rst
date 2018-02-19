@@ -103,7 +103,8 @@ Then, to install the required packages, proceed as as follows:
    .. note::
 
      This meta-package corresponds to the one used for the article.
-     Most recent meta-package can be installed by replacing :code:`fp17=1.0.0` by :code:`fp17` in previous command lines
+     Most recent meta-package can be installed by replacing :code:`fp17=1.0.0` by :code:`fp17` in previous command lines.
+     Moreover, if you replace the :code:`statiskit` channel by the :code:`statiskit/label/unstable`, you will benefit from the latest meta-package available that has not yet been released.
      
 3. Activate the **Conda** environment as advised in your terminal.
 
