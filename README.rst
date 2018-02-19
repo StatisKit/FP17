@@ -76,11 +76,6 @@ Install it !
 ============
   
 You can also install required packages on your computer to reproduce these studies.
-
-.. warning::
-
-  To use the examples without **Docker** you must first follow instructions available on this `page <http://statiskit.readthedocs.io/en/latest/developer/configure.html>`_.
-  
 In order to ease the installation of these packages on multiple operating systems, the **Conda** `package and environment management system <https://conda.io/docs/>`_ is used.
 For more information refers to the **StatisKit** software suite documentation concerning prerequisites to the `installation <http://statiskit.readthedocs.io/en/latest/user/install_it.html>`_ step.
 Then, to install the required packages, proceed as as follows:
