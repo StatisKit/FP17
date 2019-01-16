@@ -4,11 +4,14 @@
 Overload::Overload()
 {}
  
-void Overload::staticness()
-{ std::cout << "static" << std::endl; }
+Overload::~Overload()
+{}
 
-void Overload::staticness(const unsigned int value)
-{ std::cout << "static" << std::endl; }
+// void Overload::staticness()
+// { std::cout << "static" << std::endl; }
+
+// void Overload::staticness(const unsigned int value)
+// { std::cout << "static" << std::endl; }
 
 void Overload::staticness(const Overload& overload, const unsigned int value)
 { std::cout << "non-static" << std::endl; }

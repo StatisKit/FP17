@@ -14,12 +14,33 @@ struct BASIC_API ProbabilityError : std::exception
     virtual const char* what() const NOEXCEPT; 
 };
 
-class BASIC_API BinomialDistribution
+class BASIC_API DiscreteDistribution
 {
   public:
+    DiscreteDistribution();
+    virtual ~DiscreteDistribution();
+
+    virtual double pmf(const double value) const;
+    virtual double pmf(const unsigned int value) const = 0;
+};
+
+BASIC_API double pmf(const DiscreteDistribution& distribution, const unsigned int value);
+
+enum class parametric_type {
+  BINOMIAL,
+};
+
+class BASIC_API BinomialDistribution : public DiscreteDistribution
+{
+  public:
+    enum implementation_type {
+      IMPL_0,
+      IMPL_1,
+    };
+
     BinomialDistribution(const unsigned int n, const double pi);
     BinomialDistribution(const BinomialDistribution& binomial);
-    ~BinomialDistribution();
+    virtual ~BinomialDistribution();
     
     //! \brief Compute the probability of a value
     //! \details The probability is given by the flowwing formula \cite{JKK96}
@@ -31,7 +52,7 @@ class BASIC_API BinomialDistribution
     //!                                       \end{cases}.
     //!          \f}
     //! \returns The probability
-    double pmf(const unsigned int value) const;
+    double pmf(const unsigned int value) const override;
         
     double get_pi() const;
     

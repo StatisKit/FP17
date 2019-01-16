@@ -14,12 +14,12 @@
 struct BASIC_API Overload 
 {
     Overload();
- 
-    /// \brief This method print "static" in the standard C output stream
-    void staticness();
+    ~Overload();
+    // /// \brief This method print "static" in the standard C output stream
+    // void staticness();
     
-    /// \brief  This method print "static" in the standard C output stream
-    void staticness(const unsigned int value); 
+    // /// \brief  This method print "static" in the standard C output stream
+    // void staticness(const unsigned int value); 
 
     /// \brief This method print "non-static" in the standard C output
     ///        stream

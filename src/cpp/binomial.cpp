@@ -4,6 +4,18 @@
 const char * ProbabilityError::what() const NOEXCEPT
 { return "a probability must be in the interval [0,1]"; }
 
+DiscreteDistribution::DiscreteDistribution()
+{}
+
+DiscreteDistribution::~DiscreteDistribution()
+{}
+
+double DiscreteDistribution::pmf(const double value) const
+{ return 0; }
+
+double pmf(const DiscreteDistribution& distribution, const unsigned int value)
+{ return distribution.pmf(value); }
+
 BinomialDistribution::BinomialDistribution(const unsigned int n, const double pi)
 { 
     this->n = n;
