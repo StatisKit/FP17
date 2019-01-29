@@ -1,12 +1,12 @@
 package:
     name: python-basic
-    version: "1.0.0"
+    version: {{ DATETIME_DESCRIBE_VERSION }}
 
 source:
     path: ../../..
   
 build:
-    number: 0
+    number: {{ DATETIME_DESCRIBE_NUMBER }}
     script: 
         - scons py --prefix={{ PREFIX }} -j{{ CPU_COUNT }} --package=basic         [unix]
         - scons py --prefix={{ LIBRARY_PREFIX }} -j{{ CPU_COUNT }} --package=basic  [win]
@@ -21,10 +21,12 @@ requirements:
         - python-toolchain
         - python
         - libboost_python-dev
+        - libpybind11-dev
         - libbasic
     run:
         - python
         - libboost_python-dev
+        - libpybind11-dev
         - libbasic
 
 test:

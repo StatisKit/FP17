@@ -1,12 +1,12 @@
 package:
     name: fp17
-    version: "1.0.0"
+    version: {{ DATETIME_DESCRIBE_VERSION }}
 
 source:
     path: ../../..
   
 build:
-    number: 0
+    number: {{ DATETIME_DESCRIBE_NUMBER }}
                 
 about:
     home: http://autowig.readthedocs.io/
@@ -14,19 +14,24 @@ about:
 
 requirements:
     build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - autowig-toolchain
+    host:
         - python
-        - statiskit-dev
         - gitpython
         - jupyter
         - ipykernel
         - matplotlib
     run:
-        - python
-        - {{ pin_compatible('statiskit-dev', exact=True) }}
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - {{ pin_compatible('autowig-toolchain', exact=True) }}
         - gitpython
         - jupyter
         - ipykernel
         - matplotlib
+        - python
         
 test:
   commands:

@@ -1,12 +1,12 @@
 package:
     name: libbasic
-    version: "1.0.0"
+    version: {{ DATETIME_DESCRIBE_VERSION }}
 
 source:
     path: ../../..
 
 build:
-    number: 0
+    number: {{ DATETIME_DESCRIBE_NUMBER }}
     script: 
         - scons cpp --prefix={{ PREFIX }} -j{{ CPU_COUNT }}          [unix]
         - scons cpp --prefix={{ LIBRARY_PREFIX }} -j{{ CPU_COUNT }} --arch=%ARCH% [win]
