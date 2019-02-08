@@ -1,5 +1,7 @@
 # # -*-python-*-
 
+import os
+
 AddOption('--package',
           dest = 'package',
           type = 'string',
@@ -8,8 +10,11 @@ AddOption('--package',
           default = ['basic', 'fp17'])
 
 Import("env")
-pyenv = env.Clone(tools = ['boost_python'])
-
+if os.environ.get('pybind11', 'false') == 'false':
+    pyenv = env.Clone(tools = ['boost_python'])
+else:
+    pyenv = env.Clone(tools = ['pybind11'])
+          
 pyenv['PACKAGE'] = GetOption('package')
 
 
@@ -21,11 +26,17 @@ if pyenv['PACKAGE'] == 'basic':
 
     sources = [source for source in pyenv.Glob('*.*') if source.name not in exclude]
 
-    targets = pyenv.BoostPythonExtension("basic/__basic", sources)
-    Alias("py", targets)
-    Alias("install", targets)
-    pyenv.Depends(targets, "cpp")
-
+    if os.environ.get('pybind11', 'false') == 'false':
+         targets = pyenv.BoostPythonExtension("basic/__basic", sources)
+         Alias("py", targets)
+         Alias("install", targets)
+         pyenv.Depends(targets, "cpp")
+    else:
+         targets = pyenv.PyBind11Extension("basic/__basic", sources)
+         Alias("py", targets)
+         Alias("install", targets)
+         pyenv.Depends(targets, "cpp")
+          
     targets = pyenv.PythonPackage(basic = "basic")
     Alias("py", targets)
     Alias("install", targets)
