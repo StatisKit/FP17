@@ -43,18 +43,9 @@ After `installing <https://docs.docker.com/engine/installation/>`_ **Docker**, y
 
   .. code-block:: console
 
-    docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0
+    docker run -i -t -p 8888:8888 statiskit/fp17
   
 Then, follow the given instructions.
-  
-.. note::
-
-    These images correspond to the ones used for the article.
-    Most recent images can be runned using these commands in a shell: 
-
-      .. code-block:: console
-
-        docker run -i -t -p 8888:8888 statiskit/fp17:latest
     
 Install it !
 ============
@@ -74,13 +65,11 @@ Then, to install the required packages, proceed as as follows:
       
    .. code:: console
 
-     conda create -n fp17py3k fp17=1.0.0 python=3 -c statiskit -c defaults --override-channels
+     conda create -n fp17 fp17 -c statiskit -c defaults --override-channels
 
    .. note::
 
-     This meta-package corresponds to the one used for the article.
-     Most recent meta-package can be installed by replacing :code:`fp17=1.0.0` by :code:`fp17` in previous command lines.
-     Moreover, if you replace the :code:`statiskit` channel by the :code:`statiskit/label/unstable` channel, you will benefit from the latest meta-package available that has not yet been released.
+     This meta-package do not corresponds to the one used for the article.
      
 3. Activate the **Conda** environment as advised in your terminal.
 

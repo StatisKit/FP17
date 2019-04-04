@@ -17,17 +17,19 @@ about:
 
 requirements:
     build:
-        - libtoolchain
         - python-toolchain
-        - python
-        - libboost_python-dev
-        - libpybind11-dev
+        - libtoolchain
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+    host:
         - libbasic
+        - libboost-dev
+        - libboost_python
+        - python
     run:
+        - {{ pin_compatible('libbasic', exact=True) }}
+        - {{ pin_compatible('libboost_python', exact=True) }}
         - python
-        - libboost_python-dev
-        - libpybind11-dev
-        - libbasic
 
 test:
   commands:

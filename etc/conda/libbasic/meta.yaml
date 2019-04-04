@@ -17,4 +17,6 @@ about:
 
 requirements:
     build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
         - libtoolchain
