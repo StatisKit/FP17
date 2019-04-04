@@ -21,7 +21,7 @@ dist: trusty
 osx_image: xcode8.3
 
 env:
-  - ANACONDA_RELEASE=end
+  - ANACONDA_RELEASE=start
   - CONDA_RECIPE=etc/conda/fp17
   - CONDA_PACKAGES=fp17
     JUPYTER_NOTEBOOK=share/jupyter/basic.ipynb
@@ -36,7 +36,7 @@ env:
     TRAVIS_WAIT=50  
   - DOCKER_CONTEXT=etc/docker/linux-64
     DOCKER_CONTAINER=fp17
-  - ANACONDA_RELEASE=end
+  - ANACONDA_RELEASE=finish
     
 matrix:
   exclude:

@@ -40,37 +40,21 @@ Test it !
 
 To reproduce the studies with **Docker** use these `images <https://hub.docker.com/r/statiskit/fp17/tags>`_.
 After `installing <https://docs.docker.com/engine/installation/>`_ **Docker**, you can type the following commands in a shell:
-  
-* For the *Python 2* version 
 
   .. code-block:: console
 
-    docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py2k
-   
-* For the *Python 3* version 
-
-  .. code-block:: console
-
-    docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0-py3k
+    docker run -i -t -p 8888:8888 statiskit/fp17:v1.0.0
   
 Then, follow the given instructions.
   
 .. note::
 
     These images correspond to the ones used for the article.
-    Most recent images can be runned using these commands in a shell:
-
-    * For the *Python 2* version 
+    Most recent images can be runned using these commands in a shell: 
 
       .. code-block:: console
 
-        docker run -i -t -p 8888:8888 statiskit/fp17:latest-py2k
-   
-    * For the *Python 3* version 
-
-      .. code-block:: console
-
-        docker run -i -t -p 8888:8888 statiskit/fp17:latest-py3k
+        docker run -i -t -p 8888:8888 statiskit/fp17:latest
     
 Install it !
 ============
@@ -87,18 +71,10 @@ Then, to install the required packages, proceed as as follows:
      git clone --recursive https://github.com/StatisKit/FP17
      
 2. Create a **Conda** environment containing the meta-package :code:`fp17`,
-
-   * For the *Python 2* version 
       
-     .. code:: console
+   .. code:: console
 
-       conda create -n fp17py2k fp17=1.0.0 python=2 -c statiskit -c defaults --override-channels
- 
-   * For the *Python 3* version 
-      
-     .. code:: console
-
-       conda create -n fp17py3k fp17=1.0.0 python=3 -c statiskit -c defaults --override-channels
+     conda create -n fp17py3k fp17=1.0.0 python=3 -c statiskit -c defaults --override-channels
 
    .. note::
 
