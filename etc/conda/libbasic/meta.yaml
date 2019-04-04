@@ -8,8 +8,8 @@ source:
 build:
     number: {{ DATETIME_DESCRIBE_NUMBER }}
     script: 
-        - scons cpp --prefix={{ PREFIX }} -j{{ CPU_COUNT }}          [unix]
-        - scons cpp --prefix={{ LIBRARY_PREFIX }} -j{{ CPU_COUNT }} --arch=%ARCH% [win]
+        - scons cpp --prefix={{ PREFIX }} -j{{ CPU_COUNT }}         # [unix]
+        - scons cpp --prefix={{ LIBRARY_PREFIX }} -j{{ CPU_COUNT }} # [win]
     
 about:
     home: http://autowig.readthedocs.io/

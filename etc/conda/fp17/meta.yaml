@@ -14,8 +14,6 @@ about:
 
 requirements:
     build:
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
         - autowig-toolchain
     host:
         - python
@@ -24,8 +22,6 @@ requirements:
         - ipykernel
         - matplotlib
     run:
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
         - {{ pin_compatible('autowig-toolchain', exact=True) }}
         - gitpython
         - jupyter
