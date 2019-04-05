@@ -21,8 +21,10 @@ requirements:
         - jupyter
         - ipykernel
         - matplotlib
+        - devops-tools
     run:
         - {{ pin_compatible('autowig-toolchain', exact=True) }}
+        - {{ pin_compatible('devops-tools', exact=True) }}
         - gitpython
         - jupyter
         - ipykernel
