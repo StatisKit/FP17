@@ -3,12 +3,10 @@ ARG ARCH=64
 ARG GIT_TAG=latest
 FROM statiskit/linux-${ARCH}:${GIT_TAG}-py${CONDA_VERSION}k
 
-RUN echo ${HOME}
-RUN ls ${HOME}
-
 COPY README ${HOME}/README
+
+RUN rm ${HOME}/.condarc
 COPY .condarc ${HOME}/.condarc
-RUN more ${HOME}/.condarc
 RUN echo "source activate fp17" >> .bashrc
 RUN echo "cat ${HOME}/README" >> .bashrc
 
