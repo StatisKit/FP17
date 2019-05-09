@@ -7,6 +7,7 @@ COPY README ${HOME}/README
 
 RUN rm ${HOME}/.condarc
 COPY .condarc ${HOME}/.condarc
+RUN more ${HOME}/.condarc
 RUN echo "source activate fp17" >> .bashrc
 RUN echo "cat ${HOME}/README" >> .bashrc
 
