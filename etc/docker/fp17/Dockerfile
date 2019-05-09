@@ -6,7 +6,7 @@ FROM statiskit/linux-${ARCH}:${GIT_TAG}-py${CONDA_VERSION}k
 COPY README ${HOME}/README
 
 RUN rm ${HOME}/.condarc
-COPY .condarc ${HOME}/.condarc
+COPY .condarc /home/admin/.condarc
 RUN more ${HOME}/.condarc
 RUN echo "source activate fp17" >> .bashrc
 RUN echo "cat ${HOME}/README" >> .bashrc
