@@ -40,12 +40,12 @@ env:
     
 matrix:
   exclude:
-  - os: osx
-    env: DOCKER_CONTEXT=etc/docker/linux-64
-         DOCKER_CONTAINER=fp17
-  - os: windows
-    env: DOCKER_CONTEXT=etc/docker/linux-64
-         DOCKER_CONTAINER=fp17
+    - os: osx
+      env: DOCKER_CONTEXT=etc/docker/fp17
+           DOCKER_CONTAINER=fp17
+    - os: windows
+      env: DOCKER_CONTEXT=etc/docker/fp17
+           DOCKER_CONTAINER=fp17
   allow_failures:
     - os: linux
       env: CONDA_PACKAGES=fp17
