@@ -21,22 +21,22 @@ dist: trusty
 osx_image: xcode8.3
 
 env:
-  # - ANACONDA_RELEASE=start
-  # - CONDA_RECIPE=etc/conda/fp17
-  # - CONDA_PACKAGES=fp17
-  #   JUPYTER_NOTEBOOK=share/jupyter/basic.ipynb
-  # - CONDA_PACKAGES=fp17
-  #   JUPYTER_NOTEBOOK=share/jupyter/subset.ipynb
-  #   TRAVIS_WAIT=50
-  # - CONDA_PACKAGES=fp17
-  #   JUPYTER_NOTEBOOK=share/jupyter/template.ipynb
-  #   TRAVIS_WAIT=50
-  # - CONDA_PACKAGES=fp17
-  #   JUPYTER_NOTEBOOK=share/jupyter/dependent.ipynb
-  #   TRAVIS_WAIT=50  
+  - ANACONDA_RELEASE=start
+  - CONDA_RECIPE=etc/conda/fp17
+  - CONDA_PACKAGES=fp17
+    JUPYTER_NOTEBOOK=share/jupyter/basic.ipynb
+  - CONDA_PACKAGES=fp17
+    JUPYTER_NOTEBOOK=share/jupyter/subset.ipynb
+    TRAVIS_WAIT=50
+  - CONDA_PACKAGES=fp17
+    JUPYTER_NOTEBOOK=share/jupyter/template.ipynb
+    TRAVIS_WAIT=50
+  - CONDA_PACKAGES=fp17
+    JUPYTER_NOTEBOOK=share/jupyter/dependent.ipynb
+    TRAVIS_WAIT=50  
   - DOCKER_CONTEXT=etc/docker/fp17
     DOCKER_CONTAINER=fp17
-  # - ANACONDA_RELEASE=finish
+  - ANACONDA_RELEASE=finish
     
 matrix:
   exclude:
