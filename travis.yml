@@ -34,7 +34,7 @@ env:
   - CONDA_PACKAGES=fp17
     JUPYTER_NOTEBOOK=share/jupyter/dependent.ipynb
     TRAVIS_WAIT=50  
-  - DOCKER_CONTEXT=etc/docker/linux-64
+  - DOCKER_CONTEXT=etc/docker/fp17
     DOCKER_CONTAINER=fp17
   - ANACONDA_RELEASE=finish
     
